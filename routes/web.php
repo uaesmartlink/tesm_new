@@ -15,7 +15,7 @@ Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm'
 // });
 
 Route::get('language/{locale}', 'AjaxController@locale')->name('language');
-Route::get('orders/{order}/view/{hash}', 'OrderController@show')->name('orders.show');
+Route::get('order/{order}/view/{hash}', 'OrderController@show')->name('orders.show');
 Route::get('payments/{payment}/view/{hash}', 'PaymentController@show')->name('payments.show');
 
 Route::middleware(['auth'])->group(function () {
