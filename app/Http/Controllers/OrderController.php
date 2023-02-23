@@ -113,9 +113,8 @@ class OrderController extends Controller
         return back()->with('success', __('model_restored', ['model' => __choice('Order', 1)]));
     }
 
-    public function show(Request $request, Order $order, $hash)
+    public function show(Request $request, Order $order, String $hash)
     {
-        dd($order);
         if (!$request->hasValidSignature() || $order->hash != $hash) {
             abort(404);
         }
