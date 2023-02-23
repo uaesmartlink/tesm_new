@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
+Route::get('orders/{order}/view/{hash}', 'OrderController@show')->name('orders.show');
+Route::get('language/{locale}', 'AjaxController@locale')->name('language');
+Route::get('payments/{payment}/view/{hash}', 'PaymentController@show')->name('payments.show');
+
 // Auth
 // Auth::routes(['register' => false, 'verify' => false]);
 Route::middleware(['guest'])->group(function () {
@@ -15,18 +19,7 @@ Route::middleware(['guest'])->group(function () {
     // });
 });
 
-Route::get('/language/{locale}', 'AjaxController@locale')->name('language');
-Route::get('/orders/{order}/view/{hash}', 'OrderController@show')->name('orders.show');
-Route::get('/payments/{payment}/view/{hash}', 'PaymentController@show')->name('payments.show');
-Route::get('orders', 'OrderController@index')->name('orders');
-Route::get('orders/customer/{id}', 'OrderController@byCustomer')->name('orders.customer');
-Route::post('orders', 'OrderController@store')->name('orders.store');
-Route::get('orders/new', 'OrderController@create')->name('orders.new');
-Route::put('orders/{order}', 'OrderController@update')->name('orders.update');
-Route::get('orders/{order}/ajax', 'OrderController@ajax')->name('orders.ajax');
-Route::get('orders/{order}/edit', 'OrderController@edit')->name('orders.edit');
-Route::post('orders/{order}/email', 'OrderController@email')->name('orders.email');
-Route::put('orders/{order}/status', 'OrderController@status')->name('orders.status');
+
 
 Route::middleware(['auth'])->group(function () {
     // Dashboard
