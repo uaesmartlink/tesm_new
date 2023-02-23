@@ -21,7 +21,7 @@ Route::middleware(['guest'])->group(function () {
 
 
 
-Route::middleware(['auth'])->group(function () {
+
     // Dashboard
       // Route::get('/', 'DashboardController@index')->name('dashboard');
     Route::get('/', 'DashboardController@index')->name('dashboard');
@@ -193,7 +193,7 @@ Route::middleware(['auth'])->group(function () {
             });
         });
     });
-});
+
 
 Route::view('offline', 'offline');
 Route::fallback(fn () => redirect()->route('dashboard'));
