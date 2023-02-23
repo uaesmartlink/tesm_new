@@ -21,7 +21,7 @@ class OrderCreated extends Notification implements ShouldQueue
 
     public function toMail($notifiable)
     {
-        $url = URL::signedRoute('orders.show', ['order' => $this->order->id, 'hash' => $this->order->hash]);
+        $url = URL::signedRoute('orders.show', ['show_order' => $this->order->id, 'hash' => $this->order->hash]);
         return (new MailMessage())
             ->subject('New order created')
             ->greeting("Hello {$this->order->customer->name}")
