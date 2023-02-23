@@ -7,10 +7,10 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class OrderRequest extends FormRequest
 {
-    public function authorize()
-    {
-        return auth()->check();
-    }
+    // public function authorize()
+    // {
+    //     // return auth()->check();
+    // }
 
     public function rules()
     {
