@@ -8,6 +8,8 @@ use App\Models\Order;
 use Illuminate\Http\Request;
 use App\Http\Resources\{CustomerCollection, TransactionCollection};
 use Twilio\Rest\Client;
+use Illuminate\Support\Facades\URL;
+
 class CustomerController extends Controller
 {
     public function create()
