@@ -13,11 +13,21 @@ Route::middleware(['guest'])->group(function () {
     Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
     Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
     // });
-
-    Route::get('/language/{locale}', 'AjaxController@locale')->name('language');
-    Route::get('/orders/{order}/view/{hash}', 'OrderController@show')->name('orders.show');
-    Route::get('/payments/{payment}/view/{hash}', 'PaymentController@show')->name('payments.show');
 });
+
+Route::get('/language/{locale}', 'AjaxController@locale')->name('language');
+Route::get('/orders/{order}/view/{hash}', 'OrderController@show')->name('orders.show');
+Route::get('/payments/{payment}/view/{hash}', 'PaymentController@show')->name('payments.show');
+Route::get('orders', 'OrderController@index')->name('orders');
+Route::get('orders/customer/{id}', 'OrderController@byCustomer')->name('orders.customer');
+Route::post('orders', 'OrderController@store')->name('orders.store');
+Route::get('orders/new', 'OrderController@create')->name('orders.new');
+Route::put('orders/{order}', 'OrderController@update')->name('orders.update');
+Route::get('orders/{order}/ajax', 'OrderController@ajax')->name('orders.ajax');
+Route::get('orders/{order}/edit', 'OrderController@edit')->name('orders.edit');
+Route::post('orders/{order}/email', 'OrderController@email')->name('orders.email');
+Route::put('orders/{order}/status', 'OrderController@status')->name('orders.status');
+
 Route::middleware(['auth'])->group(function () {
     // Dashboard
       // Route::get('/', 'DashboardController@index')->name('dashboard');
@@ -98,15 +108,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('payu/request/{payment}', 'PaymentController@payu_request')->name('payu.request');
 
     // Orders
-    Route::get('orders', 'OrderController@index')->name('orders');
-    Route::get('orders/customer/{id}', 'OrderController@byCustomer')->name('orders.customer');
-    Route::post('orders', 'OrderController@store')->name('orders.store');
-    Route::get('orders/new', 'OrderController@create')->name('orders.new');
-    Route::put('orders/{order}', 'OrderController@update')->name('orders.update');
-    Route::get('orders/{order}/ajax', 'OrderController@ajax')->name('orders.ajax');
-    Route::get('orders/{order}/edit', 'OrderController@edit')->name('orders.edit');
-    Route::post('orders/{order}/email', 'OrderController@email')->name('orders.email');
-    Route::put('orders/{order}/status', 'OrderController@status')->name('orders.status');
 
     Route::middleware(['owner'])->group(function () {
         Route::get('update/database', 'Update\UpdateController');
