@@ -119,7 +119,6 @@ class OrderController extends Controller
             abort(404);
         }
         // echo "<h1>Hello</h1>";
-
         $order->load(['account', 'customer', 'services', 'taxes', 'user:id,name', 'payments']);
         return Inertia::render('Orders/Show', [
             'modal' => false,
