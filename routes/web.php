@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 // Auth
 // Auth::routes(['register' => false, 'verify' => false]);
 Route::middleware(['guest'])->group(function () {
+
     Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
     Route::post('login', 'Auth\LoginController@login')->name('login.attempt');
     Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
