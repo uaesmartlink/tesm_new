@@ -117,7 +117,7 @@ class OrderController extends Controller
     {
         // if (!$request->hasValidSignature() || $order->hash != $hash) {
         if( $order->hash != $hash){
-            abort(404);
+            abort(401);
         }
 
         $order->load(['account', 'customer', 'services', 'taxes', 'user:id,name', 'payments']);
