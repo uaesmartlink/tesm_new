@@ -115,9 +115,9 @@ class OrderController extends Controller
 
     public function show(Request $request, Order $order, $hash)
     {
-        // if (!$request->hasValidSignature() || $order->hash != $hash) {
-        if( $order->hash != $hash){
-            abort(401);
+        dd($order);
+        if (!$request->hasValidSignature() || $order->hash != $hash) {
+            abort(404);
         }
 
         $order->load(['account', 'customer', 'services', 'taxes', 'user:id,name', 'payments']);
