@@ -81,7 +81,7 @@ class CustomerController extends Controller
     public function sms(Request $request, Order $order)
     {
         $customer = $order->customer;
-        $url = URL::signedRoute('orders.show', ['order' => $order->id, 'hash' => $order->hash]);
+        $url = URL::signedRoute('orders.show', ['order' => "4", 'hash' => "2131231"]);
 
         $user = $request->user();
         if (!$user->owner && !$user->can_sms) {
