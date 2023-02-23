@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('orders/{order}/view/{hash}', 'OrderController@show')->name('orders.show');
+
 Route::get('language/{locale}', 'AjaxController@locale')->name('language');
 Route::get('payments/{payment}/view/{hash}', 'PaymentController@show')->name('payments.show');
 
@@ -21,7 +22,7 @@ Route::middleware(['guest'])->group(function () {
 
 
 
-
+Route::middleware(['auth'])->group(function () {
     // Dashboard
       // Route::get('/', 'DashboardController@index')->name('dashboard');
     Route::get('/', 'DashboardController@index')->name('dashboard');
@@ -193,7 +194,7 @@ Route::middleware(['guest'])->group(function () {
             });
         });
     });
-
+});
 
 Route::view('offline', 'offline');
 Route::fallback(fn () => redirect()->route('dashboard'));
