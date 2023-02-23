@@ -27,6 +27,7 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\RedirectIfNotInstalled::class,
             \App\Http\Middleware\HandleInertiaRequests::class,
         ],
+
         'api' => [
             'throttle:60,1',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
@@ -37,7 +38,7 @@ class Kernel extends HttpKernel
         \Illuminate\View\Middleware\ShareErrorsFromSession::class,
         \App\Http\Middleware\Authenticate::class,
         \Illuminate\Routing\Middleware\ThrottleRequests::class,
-        // \Illuminate\Session\Middleware\AuthenticateSession::class,
+        \Illuminate\Session\Middleware\AuthenticateSession::class,
         \Illuminate\Routing\Middleware\SubstituteBindings::class,
         \Illuminate\Auth\Middleware\Authorize::class,
     ];
