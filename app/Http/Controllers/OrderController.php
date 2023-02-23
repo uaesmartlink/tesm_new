@@ -115,16 +115,17 @@ class OrderController extends Controller
 
     public function show(Request $request, Order $order, String $hash)
     {
-        if (!$request->hasValidSignature() || $order->hash != $hash) {
-            abort(404);
-        }
+        echo "<h1>Hello/h1>";
+        // if (!$request->hasValidSignature() || $order->hash != $hash) {
+        //     abort(404);
+        // }
 
-        $order->load(['account', 'customer', 'services', 'taxes', 'user:id,name', 'payments']);
-        return Inertia::render('Orders/Show', [
-            'modal' => false,
-            'order' => $order->toArray(),
-            'hash' => $hash,
-        ]);
+        // $order->load(['account', 'customer', 'services', 'taxes', 'user:id,name', 'payments']);
+        // return Inertia::render('Orders/Show', [
+        //     'modal' => false,
+        //     'order' => $order->toArray(),
+        //     'hash' => $hash,
+        // ]);
     }
 
     public function status(Request $request, Order $order)
