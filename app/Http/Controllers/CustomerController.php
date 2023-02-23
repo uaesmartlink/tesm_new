@@ -88,7 +88,7 @@ class CustomerController extends Controller
             return back()->with('success', __('You are not allowed to access the resource.'));
         }
         $v = $request->validate(['text' => 'required|string']);
-        log_activity(__('User is trying to send sms.'), ['sms' => $v['text'], 'user' => $user], $customer);
+        // log_activity(__('User is trying to send sms.'), ['sms' => $v['text'], 'user' => $user], $customer);
         $mobile = "971504479797";							//اسم المستخدم من دو
         $password = "123456";							//الباسورد  من دو
 
