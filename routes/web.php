@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 // Auth
 // Auth::routes(['register' => false, 'verify' => false]);
-// Route::middleware(['guest'])->group(function () {
+Route::middleware(['guest'])->group(function () {
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login')->name('login.attempt');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
@@ -17,7 +17,7 @@ Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm'
 Route::get('/language/{locale}', 'AjaxController@locale')->name('language');
 Route::get('/orders/{order}/view/{hash}', 'OrderController@show')->name('orders.show');
 Route::get('/payments/{payment}/view/{hash}', 'PaymentController@show')->name('payments.show');
-
+});
 Route::middleware(['auth'])->group(function () {
     // Dashboard
       // Route::get('/', 'DashboardController@index')->name('dashboard');
