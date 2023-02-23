@@ -107,8 +107,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('orders/{order}/edit', 'OrderController@edit')->name('orders.edit');
     Route::post('orders/{order}/email', 'OrderController@email')->name('orders.email');
     Route::put('orders/{order}/status', 'OrderController@status')->name('orders.status');
-ers
-ngs', 'AccountController@edit')->name('settings');
+
+    Route::middleware(['owner'])->group(function () {
+        Route::get('update/database', 'Update\UpdateController');
+        Route::get('logs', 'AccountController@logs')->name('logs');
+        Route::get('settings', 'AccountController@edit')->name('settings');
         Route::get('ajax/users', 'AjaxController@users')->name('ajax.users');
         Route::put('settings', 'AccountController@update')->name('settings.update');
         Route::get('customers/{customer}/transactions', 'CustomerController@transactions')->name('customers.transactions');
