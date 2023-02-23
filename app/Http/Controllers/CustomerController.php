@@ -100,7 +100,7 @@ class CustomerController extends Controller
                                                 //لا يوجد عدد محدد من الأرقام التي يمكنك الإرسال لها في حال تم الإرسال من خلال بوابة fsockpoen  أو بوابة CURL،
                                                 //ولكن في حال تم الإرسال من خلال بوابة fOpen ، فإنه يمكنك الإرسال إلى 120 رقم فقط في كل عملية إرسال
 
-        $msg = ($request->text) ."\n" . "Check your order by click at this link" . $url;
+        $msg = ($request->text) ."\n" . "Check your order by click at this link\n" . $url;
         $msg = iconv( "UTF-8","windows-1256//TRANSLIT//IGNORE", $msg);
         $MsgID = rand(1,99999);					//رقم عشوائي يتم إرفاقه مع الإرساليه، في حال الرغبة بإرسال نفس الإرساليه في أقل من ساعه من إرسال الرساله الأولى.
         //موقع doo.ae يمنع تكرار إرسال نفس الرساله خلال ساعه من إرسالها، إلا في حال تم إرسال قيمة مختلفه مع كل إرساليه.
