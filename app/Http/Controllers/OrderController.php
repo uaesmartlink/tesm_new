@@ -115,12 +115,17 @@ class OrderController extends Controller
 
     public function show(Request $request, $order, $hash)
     {
+        $order = Order::withoutGlobalScopes()->where('id', $order)->first();
+        // dd($order);
         if (!$request->hasValidSignature() || $order->hash != $hash) {
             abort(404);
         }
-        // echo "<h1>Hello</h1>";
-        $order->load(['account', 'customer', 'services', 'taxes', 'user:id,name', 'payments']);
+
+        // $order->load(['account', 'customer', 'services', 'taxes', 'user:id,name', 'payments']);
+        //
+        $order->load(['account', 'customer','services', 'taxes', 'user:id,name','payments']);
         return view('order.show',['order' => $order]);
+        // return $order;
         // return Inertia::render('Orders/Show', [
         //     'modal' => false,
         //     'order' => $order->toArray(),
