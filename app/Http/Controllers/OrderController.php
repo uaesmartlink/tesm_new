@@ -124,13 +124,13 @@ class OrderController extends Controller
         // $order->load(['account', 'customer', 'services', 'taxes', 'user:id,name', 'payments']);
         //
         $order->load(['account', 'customer','services', 'taxes', 'user:id,name','payments']);
-        // return view('order.show',['order' => $order]);
+        return view('order.show',['order' => $order]);
         // return $order;
-        return Inertia::render('Orders/Show', [
-            'modal' => false,
-            'order' => $order->toArray(),
-            'hash' => $hash,
-        ]);
+        // return Inertia::render('Orders/Show', [
+        //     'modal' => false,
+        //     'order' => $order->toArray(),
+        //     'hash' => $hash,
+        // ]);
     }
 
     public function status(Request $request, Order $order)
