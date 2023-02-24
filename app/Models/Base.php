@@ -43,7 +43,8 @@ class Base extends Model
         });
 
         static::addGlobalScope('account', function (Builder $builder) {
-            $builder->where('account_id', auth()->user()->account_id ?? 0);
+            if(auth()->user())
+                $builder->where('account_id', auth()->user()->account_id ?? 0);
         });
     }
 
