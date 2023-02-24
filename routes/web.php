@@ -71,7 +71,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('customers/get', 'CustomerController@getCustomer')->name('customer.get');
     Route::post('customers', 'CustomerController@store')->name('customers.store');
     Route::get('customers/create', 'CustomerController@create')->name('customers.create');
-    Route::post('customers/{customer}/sms', 'CustomerController@sms')->name('customers.sms');
+    Route::post('customers/{order}/sms', 'CustomerController@sms')->name('customers.sms');
     Route::put('customers/{customer}', 'CustomerController@update')->name('customers.update');
     Route::get('customers/{customer}/edit', 'CustomerController@edit')->name('customers.edit');
 

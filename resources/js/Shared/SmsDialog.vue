@@ -44,7 +44,7 @@ export default {
       this.sending = true;
       this.sending = true;
       this.$axios
-        .post(this.route('customers.sms', this.order), { text: this.text })
+        .post(this.route('customers.sms', this.order.id), { text: this.text })
         .then(res => {
           this.sending = false;
           this.sent = res.data.success;
