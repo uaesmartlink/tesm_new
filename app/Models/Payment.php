@@ -28,7 +28,7 @@ class Payment extends Base
         parent::boot();
         static::addGlobalScope('mine', function (Builder $builder) {
             $user = auth()->user();
-            if (!$user->owner && !$user->view_all) {
+            if ($user && !$user->owner && !$user->view_all) {
                 return $builder->where('user_id', $user->id);
             }
         });
