@@ -9,7 +9,6 @@ use Illuminate\Http\Request;
 use App\Http\Resources\{CustomerCollection, TransactionCollection};
 use Twilio\Rest\Client;
 use Illuminate\Support\Facades\URL;
-use Barryvdh\Debugbar\Facade as Debugbar;
 
 
 class CustomerController extends Controller
@@ -82,11 +81,7 @@ class CustomerController extends Controller
 
     public function sms(Request $request, Order $order)
     {
-
         $customer = $order->customer;
-        Debugbar::info($order);
-        Debugbar::info('-----');
-        Debugbar::info($customer);
         $url = URL::signedRoute('orders.show', ['order' => $order->id, 'hash' => $order->hash]);
         // $url = 'https://cloaks.boutique/orders/'.($order->id).'/view/' . ($order->hash);
         $user = $request->user();
