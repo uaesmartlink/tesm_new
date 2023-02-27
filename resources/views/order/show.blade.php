@@ -278,7 +278,7 @@
                                   $discount = $order->discount;
 
                                 if(count($order->taxes) > 0)
-                                  $rate = $order->taxes[0]->rate;
+                                  $rate = $order->taxes[0]->rate / 100;
                                 else
                                     $rate = 0;
                                   $vat =  $rate * (($order->total) - ($order->discount));
