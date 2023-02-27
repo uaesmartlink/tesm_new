@@ -121,7 +121,7 @@ class OrderController extends Controller
         }
 
         $order->load(['account', 'customer', 'services', 'taxes', 'user:id,name', 'payments']);
-        //
+
         // $order->load(['account', 'customer','services', 'taxes', 'user:id,name','payments']);
         return view('order.show',['order' => $order]);
         // return $order;
