@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Builder;
+use Barryvdh\Debugbar\Facade as Debugbar;
 
 class Order extends Base
 {
