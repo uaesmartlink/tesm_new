@@ -116,8 +116,7 @@ class OrderController extends Controller
     public function show(Request $request, $order, $hash)
     {
         $order = Order::withoutGlobalScopes()->where('id', $order)->first();
-        // dd($order);
-        if (!$request->hasValidSignature() || $order->hash != $hash) {
+        if ( $order->hash != $hash) {
             abort(404);
         }
 
@@ -131,8 +130,31 @@ class OrderController extends Controller
         //     'order' => $order->toArray(),
         //     'hash' => $hash,
         // ]);
-    }
 
+    }
+    public function confirm(Request $request, $order, $hash)
+    {
+        $order = Order::withoutGlobalScopes()->where('id', $order)->first();
+        // dd($order);
+        if ($order->hash != $hash) {
+            abort(404);
+        }
+        $order->status = "Preparing";
+        $order->save();
+        // return $order;
+        return view('order.show',['order' => $order, 'message' => 'شكراً لك تم تأكيد طلبك بنجاح']);
+
+        // $order->load(['account', 'customer', 'services', 'taxes', 'user:id,name', 'payments']);
+        //
+        // $order->load(['account', 'customer','services', 'taxes', 'user:id,name','payments']);
+        // return $order;
+        // return Inertia::render('Orders/Show', [
+        //     'modal' => false,
+        //     'order' => $order->toArray(),
+        //     'hash' => $hash,
+        // ]);
+
+    }
     public function status(Request $request, Order $order)
     {
         $this->authorize('update', $order);
