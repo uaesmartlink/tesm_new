@@ -32,6 +32,7 @@
             .data-center{
                 text-align: center;
             }
+
         </style>
     </head>
     <body>
@@ -181,13 +182,13 @@
                                 <td>
                                     <table class="inner-inner">
                                         <tr>
-                                            <td>
+                                            <td style="font-weight: 700;">
                                                 L
                                             </td>
                                             <td>
                                                 {{ $service->measurement->extra_attributes[0]["L"] }}
                                             </td>
-                                            <td>
+                                            <td style="font-weight: 700;">
                                                 B
                                             </td>
                                             <td>
@@ -195,13 +196,13 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>
+                                            <td style="font-weight: 700;">
                                                 H
                                             </td>
                                             <td>
                                                 {{ $service->measurement->extra_attributes[2]["H"] }}
                                             </td>
-                                            <td>
+                                            <td style="font-weight: 700;">
                                                 SI
                                             </td>
                                             <td>
@@ -209,13 +210,13 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>
+                                            <td style="font-weight: 700;">
                                                 W
                                             </td>
                                             <td>
                                                 {{ $service->measurement->extra_attributes[4]["W"] }}
                                             </td>
-                                            <td>
+                                            <td style="font-weight: 700;">
                                                 S
                                             </td>
                                             <td>
@@ -223,13 +224,13 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>
+                                            <td style="font-weight: 700;">
                                                 NI
                                             </td>
                                             <td>
                                                 {{ $service->measurement->extra_attributes[6]["NI"] }}
                                             </td>
-                                            <td>
+                                            <td style="font-weight: 700;">
                                                 AH
                                             </td>
                                             <td>
@@ -237,7 +238,7 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>
+                                            <td style="font-weight: 700;">
                                                 P.B
                                             </td>
                                             <td>
@@ -303,6 +304,60 @@
                     </table>
                </tr>
         </table>
+        <div dir="rtl" lang="ar" style="margin-right: 5%">
+            <ol >
+                <li>
+                    ‎نحن غير مسؤولين عن اي تغير في التصميم واللون ولا يتم تبديله او ارجاعه
+                </li>
+                <li>
+                    يستغرق تنفيذ الفستان او العباية المدة المتفق عليها ويمكن التأخير في حال حدوث ظروف خارجة عن ارادتنا
+                </li>
+                <li>
+                    دفعة مقدمة 50% لكل فستان او عباية
+                </li>
+                <li>
+                    الدفعة الاولى غير قابلة للرد
+                </li>
+                <li>
+                    الفستان العاجل يستهلك رسوم اضافية
+                </li>
+                <li>
+                    التعديلات صالحة فقط في غضون اسبوعين من  تاريخ التسليم وغير مسؤولين عن اي تعديل بعد المدة المذكورة
+                </li>
+                <li>
+                    سوف يتم بيع الفستان في حال فشل العميل لجمعة خلال شهرين ولا يتم ارجاع المبلغ المقدم
+                </li>
+                <li>
+                    ليس لدينا سياسة ارجاع او استبدال
+                </li>
+                <li>
+                    غير مسؤولين عن اي مقاسات يتم اعطاءها من العميل ولكن نقوم بالتعديلات عليها خلال اسبوعين من تاريخ التسليم ويتحمل العميل كافة مصاريف الشحن والتوصيل
+                </li>
+                <li>
+                    لا يتم تغير الطلب او الالغاء بعد  اصدار الفاتورة
+                </li>
+                <li>
+                    الحقوق المتعلقة في هذا التصميم محفوظة لا يمكن نسخه او تصويره  او المتاجرة به
+                </li>
+            </ol>
+            <span style="display: block;">
+                :بالنقر على الزر أدناه فإنك توافق على الشروط ةالأحكام ويتم بدء العمل بالطلب الخاص بك
+            </span>
+
+            @php
+                if (isset($message)) {
+                    @endphp
+                         <span style="font-color:grren; display: block;">{{ $message }}</span>
+                    @php
+                }else {
+                    @endphp
+                    <form action="{{ route('orders.confirm', [$order,$order->hash]) }}" method="GET">
+                        <button type="submit">موافق</button>
+                    </form>
+                    @php
+                }
+            @endphp
+        </div>
     </body>
 </html>
 
