@@ -272,8 +272,15 @@
                               <td></td>
                               <td></td>
                               @php
+                                if($order->discount == null)
+                                    $discount = 0;
+                                else
                                   $discount = $order->discount;
-                                  $rate =$order->taxes[0]->rate;
+
+                                if(count($order->taxes) > 0)
+                                  $rate = $order->taxes[0]->rate;
+                                else
+                                    $rate = 0;
                                   $vat =  $rate * (($order->total) - ($order->discount));
                                   $grand_total = $order->total - $order->discount + 0;
                               @endphp
