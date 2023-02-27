@@ -282,7 +282,7 @@
                                 else
                                     $rate = 0;
                                   $vat =  $rate * (($order->total) - ($order->discount));
-                                  $grand_total = $order->total - $order->discount + 0;
+                                  $grand_total = $order->total - $order->discount + $vat;
                               @endphp
                               <td style="text-align: right;">Discount</td>
                               <td class="data-center">{{ $discount }}</td>
