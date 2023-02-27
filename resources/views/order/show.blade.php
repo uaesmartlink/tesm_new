@@ -36,7 +36,6 @@
         </style>
     </head>
     <body>
-        {{ $order }}
         <table class="styled-table">
             <tr>
               <table class="inner-table">
@@ -273,8 +272,8 @@
                               <td></td>
                               <td></td>
                               @php
-                                  $discount = 0;
-                                  $rate = 0.05;
+                                  $discount = $order->discount;
+                                  $rate =$order->taxes[0]->rate;
                                   $vat =  $rate * (($order->total) - ($order->discount));
                                   $grand_total = $order->total - $order->discount + 0;
                               @endphp
