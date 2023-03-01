@@ -4,35 +4,125 @@
             Order
         </title>
         <style>
+            * {
+                margin: auto;
+                padding-left: 2em;
+                padding-right: 2em;
+                padding-top: .0.5em;
+                padding-bottom: 0.5em;
+            }
             .styled-table {
                 margin: auto;
                 padding: 10;
-                font-size: 0.9em;
+                font-size: 1vw;
                 font-family: sans-serif;
                 min-width: 80%;
-                box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
             }
             .inner-table {
                 margin: auto;
                 padding: 10;
-                font-size: 0.9em;
+                font-size: 1vw;
                 font-family: sans-serif;
                 min-width: 80%;
-                box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 
             }
             .inner-inner{
                 border: 1px solid gray;
                 margin: auto;
                 padding: 10;
-                font-size: 0.9em;
+                font-size: 1vw;
                 min-width: 80%;
                 font-family: sans-serif;
             }
             .data-center{
                 text-align: center;
             }
+            .gr{
+                background-color:rgb(229,231,235);
+            }
+            table{
+                border-collapse: collapse;
+                border-bottom: 0.01em solid black;
+            }
+            table td{
+                border: none;
+            }
 
+            .gr td
+            {
+               border:none;
+               background-color:rgb(229,231,235);
+            }
+            .bold{
+                font-weight: 700;
+            }
+
+            .trc{
+                border-top-right-radius: 5px;
+            }
+            .tlc{
+                border-top-left-radius:  5px;
+            }
+            .blc{
+                border-bottom-left-radius:  5px;
+            }
+            .brc{
+                border-bottom-right-radius:  5px;
+            }
+            span{
+                font-size: 0.8vw;
+            }
+
+            /* CSS */
+            .button-3 {
+                appearance: none;
+                background-color: #2ea44f;
+                border: 1px solid rgba(27, 31, 35, .15);
+                border-radius: 6px;
+                box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+                box-sizing: border-box;
+                color: #fff;
+                cursor: pointer;
+                display: inline-block;
+                font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+                font-size: 1vw;
+                font-weight: 600;
+                padding: 6px 16px;
+                position: relative;
+                text-align: center;
+                text-decoration: none;
+                user-select: none;
+                -webkit-user-select: none;
+                touch-action: manipulation;
+                vertical-align: middle;
+                white-space: nowrap;
+            }
+
+            .button-3:focus:not(:focus-visible):not(.focus-visible) {
+                box-shadow: none;
+                outline: none;
+            }
+
+            .button-3:hover {
+             background-color: #2c974b;
+            }
+
+            .button-3:focus {
+                box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
+                outline: none;
+            }
+
+            .button-3:disabled {
+                background-color: #94d3a2;
+                border-color: rgba(27, 31, 35, .1);
+                color: rgba(255, 255, 255, .8);
+                cursor: default;
+            }
+
+            .button-3:active {
+                background-color: #298e46;
+                box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+            }
         </style>
     </head>
     <body>
@@ -46,29 +136,29 @@
                       </td>
                   </tr>
                   <tr>
-                      <td>
-                          {{ $order->account->phone }}
-                      </td>
+                    <td class="bold">
+                        {{ $order->account->phone }}
+                    </td>
                   </tr>
                   <tr>
-                      <td>
+                    <td class="bold">
                           {{ $order->account->email }}
-                      </td>
+                    </td>
                   </tr>
                   <tr>
-                      <td>
+                    <td class="bold">
                           {{ $order->account->address }}
-                      </td>
+                    </td>
                   </tr>
                   <tr>
-                      <td>
+                    <td class="bold">
                           346671
-                      </td>
+                    </td>
                   </tr>
                   <tr>
-                      <td>
+                    <td class="bold">
                       TRN 100009122100003
-                      </td>
+                    </td>
                   </tr>
               </table>
              </tr>
@@ -132,8 +222,8 @@
                                       Services
                                   </th>
                               </tr>
-                              <tr>
-                                  <th>
+                              <tr class="gr">
+                                  <th class="tlc  blc">
                                       Item / Details
                                   </th>
                                   <th>
@@ -148,7 +238,7 @@
                                   <th>
                                       Qty
                                   </th>
-                                  <th>
+                                  <th class="trc brc">
                                       Amount
                                   </th>
                               </tr>
@@ -156,7 +246,7 @@
                       </thead>
                       <tbody>
                           @foreach ($order->services as $service)
-                          <tr>
+                          <tr >
                               <td class="data-center">
                                   {{ $service->name }}
                               </td>
@@ -258,36 +348,29 @@
                               <td></td>
                           </tr>
                           @endforeach
-                          <tr>
-                              <td></td>
+                          <tr class="gr">
+                              <td class="tlc"></td>
                               <td></td>
                               <td></td>
                               <td></td>
                               <td style="text-align: right;">Total</td>
-                              <td class="data-center">{{ $order->total }}</td>
+                              <td class="data-center trc">{{ $order->total }}</td>
                           </tr>
-                          <tr>
+                          <tr class="gr">
                               <td></td>
                               <td></td>
                               <td></td>
                               <td></td>
                               @php
-                                if($order->discount == null)
-                                    $discount = 0;
-                                else
-                                  $discount = $order->discount;
-
-                                if(count($order->taxes) > 0)
-                                  $rate = $order->taxes[0]->rate / 100;
-                                else
-                                    $rate = 0;
+                                  $discount = 0;
+                                  $rate = 0.05;
                                   $vat =  $rate * (($order->total) - ($order->discount));
-                                  $grand_total = $order->total - $order->discount + $vat;
+                                  $grand_total = $order->total - $order->discount + 0;
                               @endphp
                               <td style="text-align: right;">Discount</td>
                               <td class="data-center">{{ $discount }}</td>
                           </tr>
-                          <tr>
+                          <tr class="gr">
                               <td></td>
                               <td></td>
                               <td></td>
@@ -295,13 +378,13 @@
                               <td style="text-align: right;">VAT</td>
                               <td class="data-center">{{ $vat }}</td>
                           </tr>
-                          <tr>
-                              <td></td>
+                          <tr class="gr">
+                              <td class="blc"></td>
                               <td></td>
                               <td></td>
                               <td></td>
                               <td style="text-align: right;">Grand Total</td>
-                              <td class="data-center">{{ $grand_total }}</td>
+                              <td class="data-center brc">{{ $grand_total }}</td>
                           </tr>
                           <tr>
                               <td colspan="6">
@@ -313,54 +396,86 @@
              </tr>
       </table>
         <div dir="rtl" lang="ar" style="margin-right: 5%">
-            <ol >
-                <li>
-                    نحن غير مسؤولين عن اي تغير في التصميم واللون ولا يتم تبديله او ارجاعه
-                </li>
-                <li>
-                    يستغرق تنفيذ الفستان او العباية المدة المتفق عليها ويمكن التأخير في حال حدوث ظروف خارجة عن ارادتنا
-                </li>
-                <li>
-                    دفعة مقدمة 50% لكل فستان او عباية
-                </li>
-                <li>
-                    الدفعة الاولى غير قابلة للرد
-                </li>
-                <li>
-                    الفستان العاجل يستهلك رسوم اضافية
-                </li>
-                <li>
-                    التعديلات صالحة فقط في غضون اسبوعين من  تاريخ التسليم وغير مسؤولين عن اي تعديل بعد المدة المذكورة
-                </li>
-                <li>
-                    سوف يتم بيع الفستان في حال فشل العميل لجمعة خلال شهرين ولا يتم ارجاع المبلغ المقدم
-                </li>
-                <li>
-                    ليس لدينا سياسة ارجاع او استبدال
-                </li>
-                <li>
-                    غير مسؤولين عن اي مقاسات يتم اعطاءها من العميل ولكن نقوم بالتعديلات عليها خلال اسبوعين من تاريخ التسليم ويتحمل العميل كافة مصاريف الشحن والتوصيل
-                </li>
-                <li>
-                    لا يتم تغير الطلب او الالغاء بعد  اصدار الفاتورة
-                </li>
-                <li>
-                    الحقوق المتعلقة في هذا التصميم محفوظة لا يمكن نسخه او تصويره  او المتاجرة به
-                </li>
-            </ol>
-            <span style="display: block;">
-                :بالنقر على الزر أدناه فإنك توافق على الشروط ةالأحكام ويتم بدء العمل بالطلب الخاص بك
+
+                <span style="display: block;">
+                    1- نحن غير مسؤولين عن اي تغير في التصميم واللون ولا يتم تبديله او ارجاعه
+                </span>
+                <span style="display: block;">
+
+                    2- يستغرق تنفيذ الفستان او العباية المدة المتفق عليها ويمكن التأخير في حال حدوث ظروف خارجة عن ارادتنا
+                </span>
+
+                <span style="display: block;">
+
+                     3- دفعة مقدمة 50% لكل فستان او عباية
+                </span>
+
+
+                <span style="display: block;">
+
+
+                    4- الدفعة الاولى غير قابلة للرد
+                </span>
+
+
+                <span style="display: block;">
+
+
+                    5- الفستان العاجل يستهلك رسوم اضافية
+                </span>
+
+
+                <span style="display: block;">
+
+
+                    6- التعديلات صالحة فقط في غضون اسبوعين من  تاريخ التسليم وغير مسؤولين عن اي تعديل بعد المدة المذكورة
+                </span>
+
+
+                <span style="display: block;">
+
+
+                    7-سوف يتم بيع الفستان في حال فشل العميل لجمعة خلال شهرين ولا يتم ارجاع المبلغ المقدم
+                </span>
+
+
+                <span style="display: block;">
+
+
+                    8- ليس لدينا سياسة ارجاع او استبدال
+                </span>
+
+
+                <span style="display: block;">
+
+
+                    9- غير مسؤولين عن اي مقاسات يتم اعطاءها من العميل ولكن نقوم بالتعديلات عليها خلال اسبوعين من تاريخ التسليم ويتحمل العميل كافة مصاريف الشحن والتوصيل
+                </span>
+
+
+                <span style="display: block;">
+
+
+                    10- لا يتم تغير الطلب او الالغاء بعد  اصدار الفاتورة
+                </span>
+
+                <span style="display: block;">
+                    11- الحقوق المتعلقة في هذا التصميم محفوظة لا يمكن نسخه او تصويره  او المتاجرة به
+                </span>
+            <hr/>
+            <span style="font-size: 0.7vw; margin:2em;">
+                بالنقر على الزر أدناه فإنك توافق على الشروط ةالأحكام ويتم بدء العمل بالطلب الخاص بك
             </span>
 
             @php
                 if (isset($message)) {
                     @endphp
-                         <span style="font-color:grren; display: block;">{{ $message }}</span>
+                         <span style="color:green; display: block;">{{ $message }}</span>
                     @php
                 }else {
                     @endphp
                     <form action="{{ route('orders.confirm', [$order,$order->hash]) }}" method="GET">
-                        <button type="submit">موافق</button>
+                        <button type="submit" class="button-3" style="display: inline;">موافق</button>
                     </form>
                     @php
                 }
