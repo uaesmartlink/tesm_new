@@ -141,6 +141,7 @@ class OrderController extends Controller
 
         $order->status = "Preparing";
         $order->save();
+        $order = Order::withoutGlobalScopes()->where('id', $order)->first();
         $order->load(['account', 'customer', 'services', 'taxes', 'user:id,name', 'payments']);
 
         // return $order;
