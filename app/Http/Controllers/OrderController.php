@@ -140,7 +140,7 @@ class OrderController extends Controller
         }
         $order->status = 'Preparing';
         $order->save();
-        $order->load(['account', 'customer', 'services', 'taxes', 'user:id,name', 'payments']);
+        // $order->load(['account', 'customer', 'services', 'taxes', 'user:id,name', 'payments']);
 
         // return $order;
         return view('order.show',['order' => $order, 'message' => 'شكراً لك تم تأكيد طلبك بنجاح']);
