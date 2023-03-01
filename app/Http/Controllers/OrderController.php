@@ -138,10 +138,8 @@ class OrderController extends Controller
         if ($order->hash != $hash) {
             abort(404);
         }
-        $order->load(['account', 'customer', 'services', 'taxes', 'user:id,name', 'payments']);
-        $order->status = "Preparing";
+        $order->status = 'Preparing';
         $order->save();
-        $order = Order::withoutGlobalScopes()->where('id', $order)->first();
         $order->load(['account', 'customer', 'services', 'taxes', 'user:id,name', 'payments']);
 
         // return $order;
