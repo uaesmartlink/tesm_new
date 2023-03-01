@@ -138,10 +138,11 @@ class OrderController extends Controller
         if ($order->hash != $hash) {
             abort(404);
         }
-        $order->load(['account', 'customer', 'services', 'taxes', 'user:id,name', 'payments']);
 
         $order->status = "Preparing";
         $order->save();
+        $order->load(['account', 'customer', 'services', 'taxes', 'user:id,name', 'payments']);
+
         // return $order;
         return view('order.show',['order' => $order, 'message' => 'شكراً لك تم تأكيد طلبك بنجاح']);
 
