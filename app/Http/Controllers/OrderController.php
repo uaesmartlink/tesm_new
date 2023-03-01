@@ -133,18 +133,21 @@ class OrderController extends Controller
     }
     public function confirm(Request $request, $order, $hash)
     {
-        $order = Order::withoutGlobalScopes()->where('id', $order)->first();
-        // dd($order);
-        if ($order->hash != $hash) {
-            abort(404);
+        try{
+            $order = Order::withoutGlobalScopes()->where('id', $order)->first();
+            // dd($order);
+            if ($order->hash != $hash) {
+                abort(404);
+            }
+            $order->status = 'Preparing';
+            $order->save();
+            // $order->load(['account', 'customer', 'services', 'taxes', 'user:id,name', 'payments']);
+
+            // return $order;
+            return view('order.show',['order' => $order, 'message' => 'شكراً لك تم تأكيد طلبك بنجاح']);
+        }catch (\Exception $e) {
+            return view('order.show',['order' => $order, 'message' => 'شكراً لك تم تأكيد طلبك بنجاح']);
         }
-        $order->status = 'Preparing';
-        $order->save();
-        // $order->load(['account', 'customer', 'services', 'taxes', 'user:id,name', 'payments']);
-
-        // return $order;
-        return view('order.show',['order' => $order, 'message' => 'شكراً لك تم تأكيد طلبك بنجاح']);
-
         // $order->load(['account', 'customer', 'services', 'taxes', 'user:id,name', 'payments']);
         //
         // $order->load(['account', 'customer','services', 'taxes', 'user:id,name','payments']);
