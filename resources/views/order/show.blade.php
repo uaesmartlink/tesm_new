@@ -89,9 +89,9 @@
                 cursor: pointer;
                 display: inline-block;
                 font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
-                font-size: 1vw;
+                font-size: 2vw;
                 font-weight: 600;
-                padding: 6px 16px;
+                padding: 16px 16px;
                 position: relative;
                 text-align: center;
                 text-decoration: none;
@@ -135,34 +135,34 @@
               <table class="inner-table">
                   <tr>
                       <td colspan="2" rowspan="6">
-                              <img src="{{ $order->account->logo_path }}" width="50%" >
+                              <img src="{{ $order->account->logo_path }}" width="30%" >
                       </td>
-                      <td>{{ $order->account->name }}</td>
+                      <td style="text-align: right;">{{ $order->account->name }}</td>
 
                   </tr>
-                  <tr>
-                    <td class="bold">
-                        {{ $order->account->phone }}
+                  <tr >
+                    <td class="bold" style="text-align: right;">
+                       <p> {{ $order->account->phone }}</p>
                     </td>
                   </tr>
                   <tr>
-                    <td class="bold">
+                    <td class="bold" style="text-align: right;">
                           {{ $order->account->email }}
                     </td>
                   </tr>
                   <tr>
-                    <td class="bold">
+                    <td class="bold" style="text-align: right;">
                           {{ $order->account->address }}
                     </td>
                   </tr>
                   <tr>
-                    <td class="bold">
+                    <td class="bold" style="text-align: right;">
                           346671
                     </td>
                   </tr>
                   <tr>
-                    <td class="bold">
-                      TRN 100009122100003
+                    <td class="bold" style="text-align: right;">
+                      <p> TRN 100009122100003 </p>
                     </td>
                   </tr>
               </table>
@@ -210,7 +210,7 @@
                            </tr>
                            <tr>
                               <td>
-                                  {{$order->customer->phone}}
+                                  <p>{{$order->customer->phone}}</p>
                               </td>
                               <td></td>
                               <td></td>
@@ -403,7 +403,7 @@
        <table>
         <tr>
              <td>
-                <div style="margin-left: 5%">
+                <div style="font-size: 8px;">
                     <span style="display: block;">
                         1- We are not responsible for any change in design and color and it is not exchanged or returned
                     </span>
@@ -440,7 +440,7 @@
                 </div>
               </td>
                <td>
-                    <div dir="rtl" lang="ar" style="margin-right: 5%">
+                    <div dir="rtl" lang="ar" style="font-size: 9px;">
                         <span style="display: block;">
                             1- نحن غير مسؤولين عن اي تغير في التصميم واللون ولا يتم تبديله او ارجاعه
                         </span>
@@ -483,21 +483,21 @@
                 </td>
             </tr>
         </table>
-                    @php
-                        if (isset($message)) {
-                            @endphp
-                                <span style="color:green; display: block;">{{ $message }}</span>
-                            @php
-                        }else {
-                            @endphp
-                            <form action="{{ route('orders.confirm', [$order,$order->hash]) }}" method="GET">
-                                <button type="submit" class="button-3" style="display: inline;">موافق</button>
-                            </form>
-                            @php
-                        }
+        <div>
+            @php
+                if (isset($message)) {
                     @endphp
-                </div>
-
+                        <span style="color:green; display: block;">{{ $message }}</span>
+                    @php
+                }else {
+                    @endphp
+                    <form action="{{ route('orders.confirm', [$order,$order->hash]) }}" method="GET">
+                        <button type="submit" class="button-3" style="display: inline;">موافق</button>
+                    </form>
+                    @php
+                }
+            @endphp
+        </div>
     </body>
 </html>
 
