@@ -79,6 +79,8 @@
 
             /* CSS */
             .button-3 {
+                position: absolute;
+                left: 50%;
                 appearance: none;
                 background-color: #2ea44f;
                 border: 1px solid rgba(27, 31, 35, .15);
@@ -89,7 +91,7 @@
                 cursor: pointer;
                 display: inline-block;
                 font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
-                font-size: 2vw;
+                font-size: 18px;
                 font-weight: 600;
                 padding: 16px 16px;
                 position: relative;
