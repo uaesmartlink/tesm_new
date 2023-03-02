@@ -402,45 +402,45 @@
       </table>
        <table>
         <tr>
-            <td>
-                <td>
-                    <div style="margin-left: 5%">
-                        <span style="display: block;">
-                            1- We are not responsible for any change in design and color and it is not exchanged or returned
-                        </span>
-                        <span style="display: block;">
-                            2- The implementation of the dress or abaya takes the agreed period and can be delayed in the event of circumstances beyond our control.
-                        </span>
-                        <span style="display: block;">
-                            3- 50% down payment for each dress or abaya
-                        </span>
-                        <span style="display: block;">
-                            4- The first payment is non-refundable
-                        </span>
-                        <span style="display: block;">
-                            5- The urgent dress consumes an additional fee
-                        </span>
-                        <span style="display: block;">
-                            6 - Amendments are valid only within two weeks from the date of delivery and are not responsible for any modification after the mentioned period
-                        </span>
-                        <span style="display: block;">
-                            7- The dress will be sold in the event that the customer fails to collect it within two months, and the amount provided will not be returned
-                        </span>
-                        <span style="display: block;">
-                            8- The request is not changed or canceled after the invoice is issued
-                        </span>
-                        <span style="display: block;">
-                            9- We do not have a return or exchange policy
-                        </span>
-                        <span style="display: block;">
-                            10- We are not responsible for any sizes given by the customer, but we make adjustments to them within two weeks from the date of delivery, and the customer bears all shipping and delivery costs
-                        </span>
-                        <span style="display: block;">
-                            11- The rights related to this design are reserved, and it cannot be copied or photographed or trade it
-                        </span>
-                    </div>
-                </td>
-                <div dir="rtl" lang="ar" style="margin-right: 5%">
+             <td>
+                <div style="margin-left: 5%">
+                    <span style="display: block;">
+                        1- We are not responsible for any change in design and color and it is not exchanged or returned
+                    </span>
+                    <span style="display: block;">
+                        2- The implementation of the dress or abaya takes the agreed period and can be delayed in the event of circumstances beyond our control.
+                    </span>
+                    <span style="display: block;">
+                        3- 50% down payment for each dress or abaya
+                    </span>
+                    <span style="display: block;">
+                        4- The first payment is non-refundable
+                    </span>
+                    <span style="display: block;">
+                        5- The urgent dress consumes an additional fee
+                    </span>
+                    <span style="display: block;">
+                        6 - Amendments are valid only within two weeks from the date of delivery and are not responsible for any modification after the mentioned period
+                    </span>
+                    <span style="display: block;">
+                        7- The dress will be sold in the event that the customer fails to collect it within two months, and the amount provided will not be returned
+                    </span>
+                    <span style="display: block;">
+                        8- The request is not changed or canceled after the invoice is issued
+                    </span>
+                    <span style="display: block;">
+                        9- We do not have a return or exchange policy
+                    </span>
+                    <span style="display: block;">
+                        10- We are not responsible for any sizes given by the customer, but we make adjustments to them within two weeks from the date of delivery, and the customer bears all shipping and delivery costs
+                    </span>
+                    <span style="display: block;">
+                        11- The rights related to this design are reserved, and it cannot be copied or photographed or trade it
+                    </span>
+                </div>
+              </td>
+               <td>
+                    <div dir="rtl" lang="ar" style="margin-right: 5%">
                         <span style="display: block;">
                             1- نحن غير مسؤولين عن اي تغير في التصميم واللون ولا يتم تبديله او ارجاعه
                         </span>
@@ -476,9 +476,10 @@
                             11- الحقوق المتعلقة في هذا التصميم محفوظة لا يمكن نسخه او تصويره  او المتاجرة به
                         </span>
 
-                    <span style="font-size: 0.7vw; margin:2em;">
-                        بالنقر على الزر أدناه فإنك توافق على الشروط ةالأحكام ويتم بدء العمل بالطلب الخاص بك
-                    </span>
+                        <span style="font-size: 0.7vw; margin:2em;">
+                            بالنقر على الزر أدناه فإنك توافق على الشروط ةالأحكام ويتم بدء العمل بالطلب الخاص بك
+                        </span>
+                   </div>
                 </td>
             </tr>
         </table>
