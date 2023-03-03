@@ -493,11 +493,11 @@
                     @php
                 }else {
                     @endphp
-                    <span style="font-size: 12px; margin:auto;  position: absolute; left: 42%;">
+                    <span style="font-size: 12px; margin:auto;  position: absolute; left: 38%;">
                         بالنقر على الزر أدناه فإنك توافق على الشروط ةالأحكام ويتم بدء العمل بالطلب الخاص بك
                     </span>
                     <br>
-
+                    <br>
                     <form action="{{ route('orders.confirm', [$order,$order->hash]) }}" method="GET">
                         <button type="submit" class="button-3" style="display: block;">موافق</button>
                     </form>
