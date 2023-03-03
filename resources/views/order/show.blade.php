@@ -1,4 +1,4 @@
-{{-- <html>
+<html>
     <head>
         <title>
             Order
@@ -6,26 +6,25 @@
         <style>
             *{
                 text-decoration: none;
+                font-size: 12px;
             }
 
             body {
                 margin: auto;
                 padding-left: 2em;
                 padding-right: 2em;
-                padding-top:  1em;
-                padding-bottom: 1em;
+                padding-top:  2em;
+                padding-bottom: 2em;
             }
             .styled-table {
                 margin: auto;
                 padding: 10;
-                font-size: 1vw;
                 font-family: sans-serif;
-                min-width: 80%;
+                width: 80%;
             }
             .inner-table {
                 margin: auto;
                 padding: 10;
-                font-size: 1vw;
                 font-family: sans-serif;
                 min-width: 80%;
 
@@ -34,7 +33,6 @@
                 border: 1px solid gray;
                 margin: auto;
                 padding: 10;
-                font-size: 1vw;
                 min-width: 80%;
                 font-family: sans-serif;
             }
@@ -73,8 +71,8 @@
             .brc{
                 border-bottom-right-radius:  5px;
             }
-            span{
-                font-size: 0.8vw;
+            .terms span{
+                font-size: 8px;
             }
 
             /* CSS */
@@ -91,7 +89,7 @@
                 cursor: pointer;
                 display: inline-block;
                 font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
-                font-size: 18px;
+                font-size: 10;
                 font-weight: 600;
                 padding: 16px 16px;
                 position: relative;
@@ -133,7 +131,7 @@
     </head>
     <body>
         <table class="styled-table">
-            <tr>
+            <tr >
               <table class="inner-table">
                   <tr>
                       <td colspan="2" rowspan="6">
@@ -401,91 +399,93 @@
                       </tbody>
                   </table>
              </tr>
+             <tr>
+                <table class="inner-inner">
+                    <tr>
+                        <td width="50%">
+                            <div  class="terms" style="font-size: 9px;">
+                                <span style="display: block;">
+                                    1- We are not responsible for any change in design and color and it is not exchanged or returned
+                                </span>
+                                <span style="display: block;">
+                                    2- The implementation of the dress or abaya takes the agreed period and can be delayed in the event of circumstances beyond our control.
+                                </span>
+                                <span style="display: block;">
+                                    3- 50% down payment for each dress or abaya
+                                </span>
+                                <span style="display: block;">
+                                    4- The first payment is non-refundable
+                                </span>
+                                <span style="display: block;">
+                                    5- The urgent dress consumes an additional fee
+                                </span>
+                                <span style="display: block;">
+                                    6 - Amendments are valid only within two weeks from the date of delivery and are not responsible for any modification after the mentioned period
+                                </span>
+                                <span style="display: block;">
+                                    7- The dress will be sold in the event that the customer fails to collect it within two months, and the amount provided will not be returned
+                                </span>
+                                <span style="display: block;">
+                                    8- The request is not changed or canceled after the invoice is issued
+                                </span>
+                                <span style="display: block;">
+                                    9- We do not have a return or exchange policy
+                                </span>
+                                <span style="display: block;">
+                                    10- We are not responsible for any sizes given by the customer, but we make adjustments to them within two weeks from the date of delivery, and the customer bears all shipping and delivery costs
+                                </span>
+                                <span style="display: block;">
+                                    11- The rights related to this design are reserved, and it cannot be copied or photographed or trade it
+                                </span>
+                            </div>
+                        </td>
+                        <td width="50%">
+                            <div dir="rtl" lang="ar" class="terms" style="font-size: 9px;"  width="50%">
+                                <span style="display: block;">
+                                    1- نحن غير مسؤولين عن اي تغير في التصميم واللون ولا يتم تبديله او ارجاعه
+                                </span>
+                                <span style="display: block;">
+                                    2- يستغرق تنفيذ الفستان او العباية المدة المتفق عليها ويمكن التأخير في حال حدوث ظروف خارجة عن ارادتنا
+                                </span>
+                                <span style="display: block;">
+                                    3- دفعة مقدمة 50% لكل فستان او عباية
+                                </span>
+                                <span style="display: block;">
+                                    4- الدفعة الاولى غير قابلة للرد
+                                </span>
+                                <span style="display: block;">
+                                    5- الفستان العاجل يستهلك رسوم اضافية
+                                </span>
+                                <span style="display: block;">
+                                    6- التعديلات صالحة فقط في غضون اسبوعين من  تاريخ التسليم وغير مسؤولين عن اي تعديل بعد المدة المذكورة
+                                </span>
+                                <span style="display: block;">
+                                    7-سوف يتم بيع الفستان في حال فشل العميل لجمعة خلال شهرين ولا يتم ارجاع المبلغ المقدم
+                                </span>
+                                <span style="display: block;">
+                                    8- ليس لدينا سياسة ارجاع او استبدال
+                                </span>
+                                <span style="display: block;">
+                                    9- غير مسؤولين عن اي مقاسات يتم اعطاءها من العميل ولكن نقوم بالتعديلات عليها خلال اسبوعين من تاريخ التسليم ويتحمل العميل كافة مصاريف الشحن والتوصيل
+                                </span>
+                                <span style="display: block;">
+                                    10- لا يتم تغير الطلب او الالغاء بعد  اصدار الفاتورة
+                                </span>
+                                <span style="display: block;">
+                                    11- الحقوق المتعلقة في هذا التصميم محفوظة لا يمكن نسخه او تصويره  او المتاجرة به
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+             </tr>
       </table>
-       <table>
-        <tr>
-             <td>
-                <div style="font-size: 8px;">
-                    <span style="display: block;">
-                        1- We are not responsible for any change in design and color and it is not exchanged or returned
-                    </span>
-                    <span style="display: block;">
-                        2- The implementation of the dress or abaya takes the agreed period and can be delayed in the event of circumstances beyond our control.
-                    </span>
-                    <span style="display: block;">
-                        3- 50% down payment for each dress or abaya
-                    </span>
-                    <span style="display: block;">
-                        4- The first payment is non-refundable
-                    </span>
-                    <span style="display: block;">
-                        5- The urgent dress consumes an additional fee
-                    </span>
-                    <span style="display: block;">
-                        6 - Amendments are valid only within two weeks from the date of delivery and are not responsible for any modification after the mentioned period
-                    </span>
-                    <span style="display: block;">
-                        7- The dress will be sold in the event that the customer fails to collect it within two months, and the amount provided will not be returned
-                    </span>
-                    <span style="display: block;">
-                        8- The request is not changed or canceled after the invoice is issued
-                    </span>
-                    <span style="display: block;">
-                        9- We do not have a return or exchange policy
-                    </span>
-                    <span style="display: block;">
-                        10- We are not responsible for any sizes given by the customer, but we make adjustments to them within two weeks from the date of delivery, and the customer bears all shipping and delivery costs
-                    </span>
-                    <span style="display: block;">
-                        11- The rights related to this design are reserved, and it cannot be copied or photographed or trade it
-                    </span>
-                </div>
-              </td>
-               <td>
-                    <div dir="rtl" lang="ar" style="font-size: 9px;">
-                        <span style="display: block;">
-                            1- نحن غير مسؤولين عن اي تغير في التصميم واللون ولا يتم تبديله او ارجاعه
-                        </span>
-                        <span style="display: block;">
-                            2- يستغرق تنفيذ الفستان او العباية المدة المتفق عليها ويمكن التأخير في حال حدوث ظروف خارجة عن ارادتنا
-                        </span>
-                        <span style="display: block;">
-                            3- دفعة مقدمة 50% لكل فستان او عباية
-                        </span>
-                        <span style="display: block;">
-                            4- الدفعة الاولى غير قابلة للرد
-                        </span>
-                        <span style="display: block;">
-                            5- الفستان العاجل يستهلك رسوم اضافية
-                        </span>
-                        <span style="display: block;">
-                            6- التعديلات صالحة فقط في غضون اسبوعين من  تاريخ التسليم وغير مسؤولين عن اي تعديل بعد المدة المذكورة
-                        </span>
-                        <span style="display: block;">
-                            7-سوف يتم بيع الفستان في حال فشل العميل لجمعة خلال شهرين ولا يتم ارجاع المبلغ المقدم
-                        </span>
-                        <span style="display: block;">
-                            8- ليس لدينا سياسة ارجاع او استبدال
-                        </span>
-                        <span style="display: block;">
-                            9- غير مسؤولين عن اي مقاسات يتم اعطاءها من العميل ولكن نقوم بالتعديلات عليها خلال اسبوعين من تاريخ التسليم ويتحمل العميل كافة مصاريف الشحن والتوصيل
-                        </span>
-                        <span style="display: block;">
-                            10- لا يتم تغير الطلب او الالغاء بعد  اصدار الفاتورة
-                        </span>
 
-                        <span style="display: block;">
-                            11- الحقوق المتعلقة في هذا التصميم محفوظة لا يمكن نسخه او تصويره  او المتاجرة به
-                        </span>
-
-                        <span style="font-size: 0.7vw; margin:2em;">
-                            بالنقر على الزر أدناه فإنك توافق على الشروط ةالأحكام ويتم بدء العمل بالطلب الخاص بك
-                        </span>
-                   </div>
-                </td>
-            </tr>
-        </table>
         <div>
+            <span style="font-size: 12px; margin:auto;  position: absolute; left: 42%;">
+                بالنقر على الزر أدناه فإنك توافق على الشروط ةالأحكام ويتم بدء العمل بالطلب الخاص بك
+            </span>
+            <br>
             @php
                 if (isset($message)) {
                     @endphp
@@ -502,18 +502,4 @@
         </div>
     </body>
 </html>
- --}}
- <html>
-	<head>
-	</head>
-	<body>
-		<div style="position: relative; width: 100%; height: 0; padding-top: 50.0000%;
-	 padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
-	 border-radius: 8px; will-change: transform;">
-	  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-		src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAFcIAziZjQ&#x2F;view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
-	  </iframe>
-	</div>
-	<a href="" target="_blank" rel="noopener">Modern Email Signature Template</a> by smart link
-	</body>
-</html>
+
