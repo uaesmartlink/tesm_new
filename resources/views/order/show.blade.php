@@ -89,9 +89,9 @@
                 cursor: pointer;
                 display: inline-block;
                 font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
-                font-size: 10;
+                font-size: 8px;
                 font-weight: 600;
-                padding: 10px 10px;
+                padding: 8px 8px;
                 position: relative;
                 text-align: center;
                 text-decoration: none;
