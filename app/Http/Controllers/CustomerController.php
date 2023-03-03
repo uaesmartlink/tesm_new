@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Inertia\Inertia;
 use App\Models\Customer;
 use App\Models\Order;
+use App\Models\Measurement;
 use Illuminate\Http\Request;
 use App\Http\Resources\{CustomerCollection, TransactionCollection};
 use Twilio\Rest\Client;
