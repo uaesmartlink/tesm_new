@@ -152,7 +152,7 @@
       v-if="modal"
       class="np block xs:flex items-end justify-between px-6 py-4 mt-4 bg-gray-100 border-t rounded-b"
     >
-      <div class="m-1 xs:m-0">
+    <div class="m-1 xs:m-0">
         <!-- <button
           :disabled="sending"
           @click="emailOrder(measurement.id)"
@@ -173,6 +173,9 @@
           <div v-if="sending" class="btn-spinner dark ltr:mr-2 rtl:ml-2" />
           {{ $t("SMS") }}
         </button>
+        <div v-if="send_sms" style="color:green">
+          Sms has been sent successfully
+        </div>
       </div>
 
       <button @click="hide()" class="btn-gray">
@@ -232,6 +235,7 @@ export default {
       this.$emit("close");
     },
     smsToCustomer() {
+      this.sending = true;
       console.log("Hello");
       this.send_sms = true;
       console.log(this.send_sms);
