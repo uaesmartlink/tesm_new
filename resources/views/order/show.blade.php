@@ -484,17 +484,19 @@
       </table>
 
         <div>
-            <span style="font-size: 12px; margin:auto;  position: absolute; left: 42%;">
-                بالنقر على الزر أدناه فإنك توافق على الشروط ةالأحكام ويتم بدء العمل بالطلب الخاص بك
-            </span>
+
             <br>
             @php
                 if (isset($message)) {
+
                     @endphp
-                        <span style="color:green; display: block;">{{ $message }}</span>
+                        <span style="color:green; font-size: 12px; margin:auto;  position: absolute; left: 42%;">{{ $message }}</span>
                     @php
                 }else {
                     @endphp
+                    <span style="font-size: 12px; margin:auto;  position: absolute; left: 42%;">
+                        بالنقر على الزر أدناه فإنك توافق على الشروط ةالأحكام ويتم بدء العمل بالطلب الخاص بك
+                    </span>
                     <form action="{{ route('orders.confirm', [$order,$order->hash]) }}" method="GET">
                         <button type="submit" class="button-3" style="display: inline;">موافق</button>
                     </form>
