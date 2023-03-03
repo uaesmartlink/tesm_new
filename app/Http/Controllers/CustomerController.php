@@ -83,8 +83,8 @@ class CustomerController extends Controller
     {
         $customer = $measurement->customer;
         $service = $measurement->service;
-        Debugbar::info($measurement);
-        Debugbar::info($customer);
+        // Debugbar::info($measurement);
+        // Debugbar::info($customer);
 
         // Debugbar::info($order);
         // Debugbar::info('-----');
@@ -96,7 +96,7 @@ class CustomerController extends Controller
             return back()->with('success', __('You are not allowed to access the resource.'));
         }
         $msg = "Hello " . $customer->name ." You have a measurement session for " .$service->name . " at " . $measurement->appointment . " please be on time.";
-        Debugbar::info($msg);
+        // Debugbar::info($msg);
 
         // $v = $request->validate(['text' => 'required|string']);
         // log_activity(__('User is trying to send sms.'), ['sms' => $v['text'], 'user' => $user], $customer);
