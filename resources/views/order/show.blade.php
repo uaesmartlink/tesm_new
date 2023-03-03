@@ -91,7 +91,7 @@
                 font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
                 font-size: 10;
                 font-weight: 600;
-                padding: 16px 16px;
+                padding: 10px 10px;
                 position: relative;
                 text-align: center;
                 text-decoration: none;
@@ -485,7 +485,6 @@
 
         <div>
 
-            <br>
             @php
                 if (isset($message)) {
 
@@ -497,8 +496,10 @@
                     <span style="font-size: 12px; margin:auto;  position: absolute; left: 42%;">
                         بالنقر على الزر أدناه فإنك توافق على الشروط ةالأحكام ويتم بدء العمل بالطلب الخاص بك
                     </span>
+                    <br>
+
                     <form action="{{ route('orders.confirm', [$order,$order->hash]) }}" method="GET">
-                        <button type="submit" class="button-3" style="display: inline;">موافق</button>
+                        <button type="submit" class="button-3" style="display: block;">موافق</button>
                     </form>
                     @php
                 }
