@@ -78,7 +78,80 @@ class CustomerController extends Controller
         $customer->restore();
         return back()->with('success', __('model_restored', ['model' => __choice('Customer', 1)]));
     }
+    public function smsMeasurement(Request $request,Measurement $measurement)
+    {
+        $customer = $measurement->customer;
+        $service = $measurement->service;
+        Debugbar::info($measurement);
+        Debugbar::info($customer);
 
+        // Debugbar::info($order);
+        // Debugbar::info('-----');
+        // Debugbar::info($customer);
+        // $url = URL::signedRoute('orders.show', ['order' => $order->id, 'hash' => $order->hash]);
+        // $url = 'https://cloaks.boutique/orders/'.($order->id).'/view/' . ($order->hash);
+        $user = $request->user();
+        if (!$user->owner && !$user->can_sms) {
+            return back()->with('success', __('You are not allowed to access the resource.'));
+        }
+        $msg = "Hello " . $customer->name ." You have a measurement session for " .$service->name . " at " . $measurement->appointment . " please be on time.";
+        Debugbar::info($msg);
+
+        // $v = $request->validate(['text' => 'required|string']);
+        // log_activity(__('User is trying to send sms.'), ['sms' => $v['text'], 'user' => $user], $customer);
+        $mobile = "971504479797";							//اسم المستخدم من دو
+        $password = "123456";							//الباسورد  من دو
+
+        $sender = "MERSAL";					//اسم المرسل الذي سيظهر عند ارسال الرساله، ويتم تشفيره إلى  بشكل تلقائي إلى نوع التشفير (urlencode)
+        $phone = $customer->phone;
+        if($phone[0] == "0" && $phone[1] == "5")
+        $phone = "971".substr($phone,1);
+        $numbers = $phone;							//يجب كتابة الرقم بالصيغة الدولية مثل 971505555555 وعند الإرسال إلى أكثر من رقم يجب وضع الفاصلة (,) وهي التي عند حرف الواو بين كل رقمين
+                                                //لا يوجد عدد محدد من الأرقام التي يمكنك الإرسال لها في حال تم الإرسال من خلال بوابة fsockpoen  أو بوابة CURL،
+                                                //ولكن في حال تم الإرسال من خلال بوابة fOpen ، فإنه يمكنك الإرسال إلى 120 رقم فقط في كل عملية إرسال
+
+        $msg = iconv( "UTF-8","windows-1256//TRANSLIT//IGNORE", $msg);
+        $MsgID = rand(1,99999);					//رقم عشوائي يتم إرفاقه مع الإرساليه، في حال الرغبة بإرسال نفس الإرساليه في أقل من ساعه من إرسال الرساله الأولى.
+        //موقع doo.ae يمنع تكرار إرسال نفس الرساله خلال ساعه من إرسالها، إلا في حال تم إرسال قيمة مختلفه مع كل إرساليه.
+
+        $timeSend = 0;							//لتحديد وقت الإرساليه - 0 تعني الإرسال الآن
+                //الشكل القياسي للوقت هو hh:mm:ss
+
+        $dateSend = 0;							//لتحديد تاريخ الإرساليه - 0 تعني الإرسال الآن
+                //الشكل القياسي للتاريخ هو mm:dd:yyyy
+
+        $resultType = 0;						//دالة تحديد نوع النتيجه الراجعه من البوابة
+                //0: إرجاع النتيجه كما هي في البوابة
+                //1: إرجاع معنى النتيجه الراجعه من البوابة
+
+        // دالة الإرسال
+        sendSMS($mobile, $password, $numbers, $sender, $msg, $timeSend, $dateSend, $resultType,$MsgID);
+        // $sid    = "AC719d3fb4f05778fae7cb1d2bc048fb4b";
+        // $token  = "c2fc9d53f92757fd27bc3554e5e60ba9";
+        // $twilio = new Client($sid, $token);
+
+        // $message = $twilio->messages
+        //                 ->create("whatsapp:+971501743345", // to
+        //                         array(
+        //                             "from" => "whatsapp:+12768811961",
+        //                             "body" => "Your Yummy Cupcakes Company order of 1 dozen frosted cupcakes has shipped and should be delivered on July 10, 2019. Details: http://www.yummycupcakes.com/"
+        //                         )
+        //                 );
+        return response()->json(['success' => true, 'error' => $error ?? '']);
+
+        // if (notDemo()) {
+        //     $result = false;
+        //     try {
+        //         $customer->notify(new \App\Notifications\SendSMS($customer, $v['text']));
+        //         log_activity(__('User has sent sms.'), ['sms' => $v['text'], 'user' => $user], $customer);
+        //         $result = true;
+        //     } catch (\Exception $e) {
+        //         $error = $e->getMessage();
+        //     }
+        //     return response()->json(['success' => $result, 'error' => $error ?? '']);
+        // }
+        return response()->json(['success' => false, 'error' => __('This actions is not allowed on the demo.')]);
+    }
     public function sms(Request $request, Order $order)
     {
         $customer = $order->customer;

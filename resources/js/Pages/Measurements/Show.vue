@@ -152,20 +152,36 @@
       v-if="modal"
       class="np block xs:flex items-end justify-between px-6 py-4 mt-4 bg-gray-100 border-t rounded-b"
     >
-      <!-- <div class="m-1 xs:m-0">
-        <button
+      <div class="m-1 xs:m-0">
+        <!-- <button
           :disabled="sending"
           @click="emailOrder(measurement.id)"
           class="inline-flex items-center mt-1 px-4 py-3 text-sm rounded bg-gray-200 hover:bg-gray-400 border ltr:mr-2 rtl:ml-2"
         >
           <div v-if="sending" class="btn-spinner dark ltr:mr-2 rtl:ml-2" />
           Notify
+        </button> -->
+        <button
+          :disabled="sending"
+          @click="smsToCustomer()"
+          v-if="
+            $page.props.user.account.sms_enabled &&
+            ($page.props.user.can_sms || $page.props.user.owner)
+          "
+          class="inline-flex items-center mt-1 px-4 py-3 text-sm rounded bg-gray-200 hover:bg-gray-400 border ltr:mr-2 rtl:ml-2"
+        >
+          <div v-if="sending" class="btn-spinner dark ltr:mr-2 rtl:ml-2" />
+          {{ $t("SMS") }}
         </button>
-      </div> -->
+      </div>
+
       <button @click="hide()" class="btn-gray">
         {{ $t("Close") }}
       </button>
     </div>
+    <!-- <Modal :show="send_sms" max-width="sm" :closeable="false" @close="send_sms = false">
+      <SmsDialog :measurement="this.measurement"  @close="() => (send_sms = false)" />
+    </Modal> -->
     <Dialog :show="message" :content="message" :close="() => (message = null)" />
     <Dialog
       :show="confirm"
@@ -181,10 +197,13 @@
 <script>
 import Logo from "@/Shared/Logo.vue";
 import Dropdown from "@/Shared/Dropdown.vue";
+import SmsDialog from "@/Shared/SmsDialog.vue";
+import Modal from "@/Jetstream/Modal.vue";
+
 import { log } from "console";
 
 export default {
-  components: { Logo, Dropdown },
+  components: { Logo, Dropdown, SmsDialog },
   props: {
     measurement: Object,
     modal: { default: true },
@@ -211,6 +230,31 @@ export default {
     editMeasurement() {
       this.$inertia.visit(this.route("measurements.edit", this.measurement.id));
       this.$emit("close");
+    },
+    smsToCustomer() {
+      console.log("Hello");
+      this.send_sms = true;
+      console.log(this.send_sms);
+      console.log(this.measurement.customer);
+      this.$axios
+        .post(this.route('customers.sms.measurement', this.measurement.id))
+        .then(res => {
+          this.sending = false;
+          this.sent = res.data.success;
+          if (res.data.success) {
+            this.$emit('close');
+          } else {
+            this.error = res.data.error;
+          }
+
+        })
+        .catch(err => {
+          this.sending = false;
+          console.log(err.response);
+
+          this.errors = err.response.data.errors;
+        });
+
     },
     displayExtra(attr) {
       let extra = "";

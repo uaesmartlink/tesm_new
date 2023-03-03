@@ -16,8 +16,8 @@ Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm'
 
 Route::get('language/{locale}', 'AjaxController@locale')->name('language');
 Route::get('orders/{order}/view/{hash}', 'OrderController@show')->name('orders.show');
-Route::get('payments/{payment}/view/{hash}', 'PaymentController@show')->name('payments.show');
 Route::get('order/{order}/confirm/{hash}', 'OrderController@confirm')->name('orders.confirm');
+Route::get('payments/{payment}/view/{hash}', 'PaymentController@show')->name('payments.show');
 
 Route::middleware(['auth'])->group(function () {
     // Dashboard
@@ -72,7 +72,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('customers/get', 'CustomerController@getCustomer')->name('customer.get');
     Route::post('customers', 'CustomerController@store')->name('customers.store');
     Route::get('customers/create', 'CustomerController@create')->name('customers.create');
-    Route::post('customers/{order}/sms', 'CustomerController@sms')->name('customers.sms');
+    Route::post('customers/{order}/sms/', 'CustomerController@sms')->name('customers.sms');
+    Route::post('customers/{measurement}/sms/measurement', 'CustomerController@smsMeasurement')->name('customers.sms.measurement');
     Route::put('customers/{customer}', 'CustomerController@update')->name('customers.update');
     Route::get('customers/{customer}/edit', 'CustomerController@edit')->name('customers.edit');
 
