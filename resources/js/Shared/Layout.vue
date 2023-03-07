@@ -2,7 +2,7 @@
   <div>
     <Head :title="title" />
     <!-- <portal-target name="dropdown" slim /> -->
-    <div class="flex flex-col">
+    <div class="flex flex-col pb-4">
       <div class="h-screen flex flex-col" @click="hideDropdownMenus">
         <div class="md:flex np" style="min-height: 56px">
           <div class="titlebar bg-gray-900 md:flex-shrink-0 md:w-64 px-4 py-3 flex items-center justify-center md:justify-start">
@@ -149,7 +149,7 @@
         </div>
       </div>
     </div>
-    <mobile-menu :url="url()" class="np z-20 fixed bottom-0 w-full px-2"></mobile-menu>
+    <mobile-menu :url="url()" class="np fixed bottom-0 w-full px-2"></mobile-menu>
     <v-dialog />
     <loading v-if="loading" class="z-10" />
   </div>
