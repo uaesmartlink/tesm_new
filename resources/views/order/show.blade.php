@@ -28,6 +28,8 @@
             /* Style the buttons inside the tab */
             .tab button {
             background-color: inherit;
+            position: relative;
+            margin-left: auto;
             float: left;
             border: none;
             outline: none;
@@ -525,9 +527,11 @@
             </tbody>
         </table> --}}
 
-        <div class="tab">
-            <button class="tablinks active" onclick="openCity(event, 'English')">English</button>
-            <button class="tablinks" onclick="openCity(event, 'arabic')">عربي</button>
+        <div class="tab" >
+            <center>
+                <button class="tablinks active" onclick="openCity(event, 'English')">English</button>
+                <button class="tablinks" onclick="openCity(event, 'arabic')">عربي</button>
+            </center>
         </div>
 
 
