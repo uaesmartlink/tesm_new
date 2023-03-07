@@ -28,7 +28,7 @@
             /* Style the buttons inside the tab */
             .tab button {
             background-color: inherit;
-            position: absolute;
+            position: relative;
             left: 30%;
             float: left;
             border: none;
