@@ -130,7 +130,7 @@
         </style>
     </head>
     <body>
-        @if (!isset($message))
+        @if (isset($message))
         <table class="styled-table">
             <tr >
               <table class="inner-table">
