@@ -149,7 +149,6 @@
         </div>
       </div>
     </div>
-    <div class="h-9 block bg-red-700" ></div>
     <mobile-menu :url="url()" class="np z-20 fixed bottom-0 w-full px-2"></mobile-menu>
     <v-dialog />
     <loading v-if="loading" class="z-10" />
