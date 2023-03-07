@@ -130,6 +130,7 @@
         </style>
     </head>
     <body>
+        @if (!isset($message))
         <table class="styled-table">
             <tr >
               <table class="inner-table">
@@ -399,90 +400,90 @@
                       </tbody>
                   </table>
              </tr>
-             <tr>
-                <table class="inner-inner" style="border: none;">
-                    <tbody>
-                        <tr>
-                            <td width="50%">
-                                <div  class="terms" style="font-size: 9px;">
-                                    <span style="display: block;">
-                                        1- We are not responsible for any change in design and color and it is not exchanged or returned
-                                    </span>
-                                    <span style="display: block;">
-                                        2- The implementation of the dress or abaya takes the agreed period and can be delayed in the event of circumstances beyond our control.
-                                    </span>
-                                    <span style="display: block;">
-                                        3- 50% down payment for each dress or abaya
-                                    </span>
-                                    <span style="display: block;">
-                                        4- The first payment is non-refundable
-                                    </span>
-                                    <span style="display: block;">
-                                        5- The urgent dress consumes an additional fee
-                                    </span>
-                                    <span style="display: block;">
-                                        6 - Amendments are valid only within two weeks from the date of delivery and are not responsible for any modification after the mentioned period
-                                    </span>
-                                    <span style="display: block;">
-                                        7- The dress will be sold in the event that the customer fails to collect it within two months, and the amount provided will not be returned
-                                    </span>
-                                    <span style="display: block;">
-                                        8- The request is not changed or canceled after the invoice is issued
-                                    </span>
-                                    <span style="display: block;">
-                                        9- We do not have a return or exchange policy
-                                    </span>
-                                    <span style="display: block;">
-                                        10- We are not responsible for any sizes given by the customer, but we make adjustments to them within two weeks from the date of delivery, and the customer bears all shipping and delivery costs
-                                    </span>
-                                    <span style="display: block;">
-                                        11- The rights related to this design are reserved, and it cannot be copied or photographed or trade it
-                                    </span>
-                                </div>
-                            </td>
-                            <td width="50%">
-                                <div dir="rtl" lang="ar" class="terms" style="font-size: 9px;"  width="50%">
-                                    <span style="display: block;">
-                                        1- نحن غير مسؤولين عن اي تغير في التصميم واللون ولا يتم تبديله او ارجاعه
-                                    </span>
-                                    <span style="display: block;">
-                                        2- يستغرق تنفيذ الفستان او العباية المدة المتفق عليها ويمكن التأخير في حال حدوث ظروف خارجة عن ارادتنا
-                                    </span>
-                                    <span style="display: block;">
-                                        3- دفعة مقدمة 50% لكل فستان او عباية
-                                    </span>
-                                    <span style="display: block;">
-                                        4- الدفعة الاولى غير قابلة للرد
-                                    </span>
-                                    <span style="display: block;">
-                                        5- الفستان العاجل يستهلك رسوم اضافية
-                                    </span>
-                                    <span style="display: block;">
-                                        6- التعديلات صالحة فقط في غضون اسبوعين من  تاريخ التسليم وغير مسؤولين عن اي تعديل بعد المدة المذكورة
-                                    </span>
-                                    <span style="display: block;">
-                                        7-سوف يتم بيع الفستان في حال فشل العميل لجمعة خلال شهرين ولا يتم ارجاع المبلغ المقدم
-                                    </span>
-                                    <span style="display: block;">
-                                        8- ليس لدينا سياسة ارجاع او استبدال
-                                    </span>
-                                    <span style="display: block;">
-                                        9- غير مسؤولين عن اي مقاسات يتم اعطاءها من العميل ولكن نقوم بالتعديلات عليها خلال اسبوعين من تاريخ التسليم ويتحمل العميل كافة مصاريف الشحن والتوصيل
-                                    </span>
-                                    <span style="display: block;">
-                                        10- لا يتم تغير الطلب او الالغاء بعد  اصدار الفاتورة
-                                    </span>
-                                    <span style="display: block;">
-                                        11- الحقوق المتعلقة في هذا التصميم محفوظة لا يمكن نسخه او تصويره  او المتاجرة به
-                                    </span>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-             </tr>
       </table>
-
+      @endif
+      @if (!isset($message))
+        <table class="inner-inner" style="border: none;">
+            <tbody>
+                <tr>
+                    <td width="50%">
+                        <div  class="terms" style="font-size: 9px;">
+                            <span style="display: block;">
+                                1- We are not responsible for any change in design and color and it is not exchanged or returned
+                            </span>
+                            <span style="display: block;">
+                                2- The implementation of the dress or abaya takes the agreed period and can be delayed in the event of circumstances beyond our control.
+                            </span>
+                            <span style="display: block;">
+                                3- 50% down payment for each dress or abaya
+                            </span>
+                            <span style="display: block;">
+                                4- The first payment is non-refundable
+                            </span>
+                            <span style="display: block;">
+                                5- The urgent dress consumes an additional fee
+                            </span>
+                            <span style="display: block;">
+                                6 - Amendments are valid only within two weeks from the date of delivery and are not responsible for any modification after the mentioned period
+                            </span>
+                            <span style="display: block;">
+                                7- The dress will be sold in the event that the customer fails to collect it within two months, and the amount provided will not be returned
+                            </span>
+                            <span style="display: block;">
+                                8- The request is not changed or canceled after the invoice is issued
+                            </span>
+                            <span style="display: block;">
+                                9- We do not have a return or exchange policy
+                            </span>
+                            <span style="display: block;">
+                                10- We are not responsible for any sizes given by the customer, but we make adjustments to them within two weeks from the date of delivery, and the customer bears all shipping and delivery costs
+                            </span>
+                            <span style="display: block;">
+                                11- The rights related to this design are reserved, and it cannot be copied or photographed or trade it
+                            </span>
+                        </div>
+                    </td>
+                    <td width="50%">
+                        <div dir="rtl" lang="ar" class="terms" style="font-size: 9px;"  width="50%">
+                            <span style="display: block;">
+                                1- نحن غير مسؤولين عن اي تغير في التصميم واللون ولا يتم تبديله او ارجاعه
+                            </span>
+                            <span style="display: block;">
+                                2- يستغرق تنفيذ الفستان او العباية المدة المتفق عليها ويمكن التأخير في حال حدوث ظروف خارجة عن ارادتنا
+                            </span>
+                            <span style="display: block;">
+                                3- دفعة مقدمة 50% لكل فستان او عباية
+                            </span>
+                            <span style="display: block;">
+                                4- الدفعة الاولى غير قابلة للرد
+                            </span>
+                            <span style="display: block;">
+                                5- الفستان العاجل يستهلك رسوم اضافية
+                            </span>
+                            <span style="display: block;">
+                                6- التعديلات صالحة فقط في غضون اسبوعين من  تاريخ التسليم وغير مسؤولين عن اي تعديل بعد المدة المذكورة
+                            </span>
+                            <span style="display: block;">
+                                7-سوف يتم بيع الفستان في حال فشل العميل لجمعة خلال شهرين ولا يتم ارجاع المبلغ المقدم
+                            </span>
+                            <span style="display: block;">
+                                8- ليس لدينا سياسة ارجاع او استبدال
+                            </span>
+                            <span style="display: block;">
+                                9- غير مسؤولين عن اي مقاسات يتم اعطاءها من العميل ولكن نقوم بالتعديلات عليها خلال اسبوعين من تاريخ التسليم ويتحمل العميل كافة مصاريف الشحن والتوصيل
+                            </span>
+                            <span style="display: block;">
+                                10- لا يتم تغير الطلب او الالغاء بعد  اصدار الفاتورة
+                            </span>
+                            <span style="display: block;">
+                                11- الحقوق المتعلقة في هذا التصميم محفوظة لا يمكن نسخه او تصويره  او المتاجرة به
+                            </span>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+      @endif
         <div>
 
             @php
