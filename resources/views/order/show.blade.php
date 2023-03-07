@@ -168,12 +168,12 @@
     </head>
     <body>
         @if (isset($message))
-        if (isset($message)) {
+
+            @php
+                <span style="color:green; font-size: 12px; margin:auto;  position: absolute; left: 40%;">{{ $message }}</span>
 
             @endphp
-                <span style="color:green; font-size: 12px; margin:auto;  position: absolute; left: 40%;">{{ $message }}</span>
-            @php
-        }
+
         <table class="styled-table">
             <tr >
               <table class="inner-table">
@@ -531,55 +531,53 @@
             <button class="tablinks active" onclick="openCity(event, 'English')">English</button>
             <button class="tablinks" onclick="openCity(event, 'arabic')">عربي</button>
         </div>
+        <div id="English" class="tabcontent active" style="display:block">
+
+            1- We are not responsible for any change in design and color and it is not exchanged or returned<br>
+            2- The implementation of the dress or abaya takes the agreed period and can be delayed in the event of circumstances beyond our control.<br>
+            3- 50% down payment for each dress or abaya<br>
+            4- The first payment is non-refundable<br>
+            5- The urgent dress consumes an additional fee<br>
+            6 - Amendments are valid only within two weeks from the date of delivery and are not responsible for any modification after the mentioned period<br>
+            7- The dress will be sold in the event that the customer fails to collect it within two months, and the amount provided will not be returned<br>
+            8- The request is not changed or canceled after the invoice is issued<br>
+            9- We do not have a return or exchange policy<br>
+            10- We are not responsible for any sizes given by the customer, but we make adjustments to them within two weeks from the date of delivery, and the customer bears all shipping and delivery costs<br>
+            11- The rights related to this design are reserved, and it cannot be copied or photographed or trade it<br>
+            <br>
+            <button class="button button1">Agree</button>
+        </div>
 
 
-<div id="English" class="tabcontent active" style="display:block">
-
-    1- We are not responsible for any change in design and color and it is not exchanged or returned<br>
-    2- The implementation of the dress or abaya takes the agreed period and can be delayed in the event of circumstances beyond our control.<br>
-    3- 50% down payment for each dress or abaya<br>
-    4- The first payment is non-refundable<br>
-    5- The urgent dress consumes an additional fee<br>
-    6 - Amendments are valid only within two weeks from the date of delivery and are not responsible for any modification after the mentioned period<br>
-    7- The dress will be sold in the event that the customer fails to collect it within two months, and the amount provided will not be returned<br>
-    8- The request is not changed or canceled after the invoice is issued<br>
-    9- We do not have a return or exchange policy<br>
-    10- We are not responsible for any sizes given by the customer, but we make adjustments to them within two weeks from the date of delivery, and the customer bears all shipping and delivery costs<br>
-    11- The rights related to this design are reserved, and it cannot be copied or photographed or trade it<br>
-    <br>
-    <button class="button button1">Agree</button>
-</div>
-
-
-    <div id="arabic" class="tabcontent" dir="rtl">
-      1- نحن غير مسؤولين عن اي تغير في التصميم واللون ولا يتم تبديله او ارجاعه<br>
-    2- يستغرق تنفيذ الفستان او العباية المدة المتفق عليها ويمكن التأخير في حال حدوث ظروف خارجة عن ارادتنا<br>
-    3- دفعة مقدمة 50% لكل فستان او عباية<br>
-    4- الدفعة الاولى غير قابلة للرد<br>
-    5- الفستان العاجل يستهلك رسوم اضافية<br>
-    6- التعديلات صالحة فقط في غضون اسبوعين من تاريخ التسليم وغير مسؤولين عن اي تعديل بعد المدة المذكورة<br>
-    7-سوف يتم بيع الفستان في حال فشل العميل لجمعة خلال شهرين ولا يتم ارجاع المبلغ المقدم<br>
-    8- ليس لدينا سياسة ارجاع او استبدال<br>
-    9- غير مسؤولين عن اي مقاسات يتم اعطاءها من العميل ولكن نقوم بالتعديلات عليها خلال اسبوعين من تاريخ التسليم ويتحمل العميل كافة مصاريف الشحن والتوصيل<br>
-    10- لا يتم تغير الطلب او الالغاء بعد اصدار الفاتورة<br>
-    11- الحقوق المتعلقة في هذا التصميم محفوظة لا يمكن نسخه او تصويره او المتاجرة به<br>
-    <br>
-    <button class="button button1">موافق</button>
-    <script>
-    function openCity(evt, cityName) {
-      var i, tabcontent, tablinks;
-      tabcontent = document.getElementsByClassName("tabcontent");
-      for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-      }
-      tablinks = document.getElementsByClassName("tablinks");
-      for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-      }
-      document.getElementById(cityName).style.display = "block";
-      evt.currentTarget.className += " active";
-    }
-    </script>
+            <div id="arabic" class="tabcontent" dir="rtl">
+            1- نحن غير مسؤولين عن اي تغير في التصميم واللون ولا يتم تبديله او ارجاعه<br>
+            2- يستغرق تنفيذ الفستان او العباية المدة المتفق عليها ويمكن التأخير في حال حدوث ظروف خارجة عن ارادتنا<br>
+            3- دفعة مقدمة 50% لكل فستان او عباية<br>
+            4- الدفعة الاولى غير قابلة للرد<br>
+            5- الفستان العاجل يستهلك رسوم اضافية<br>
+            6- التعديلات صالحة فقط في غضون اسبوعين من تاريخ التسليم وغير مسؤولين عن اي تعديل بعد المدة المذكورة<br>
+            7-سوف يتم بيع الفستان في حال فشل العميل لجمعة خلال شهرين ولا يتم ارجاع المبلغ المقدم<br>
+            8- ليس لدينا سياسة ارجاع او استبدال<br>
+            9- غير مسؤولين عن اي مقاسات يتم اعطاءها من العميل ولكن نقوم بالتعديلات عليها خلال اسبوعين من تاريخ التسليم ويتحمل العميل كافة مصاريف الشحن والتوصيل<br>
+            10- لا يتم تغير الطلب او الالغاء بعد اصدار الفاتورة<br>
+            11- الحقوق المتعلقة في هذا التصميم محفوظة لا يمكن نسخه او تصويره او المتاجرة به<br>
+            <br>
+            <button class="button button1">موافق</button>
+            <script>
+            function openCity(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+            }
+            </script>
       @endif
     </body>
 </html>
