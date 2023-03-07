@@ -28,8 +28,8 @@
             /* Style the buttons inside the tab */
             .tab button {
             background-color: inherit;
-            position: relative;
-            margin-left: auto;
+            position: absolute;
+            left: 30%;
             float: left;
             border: none;
             outline: none;
