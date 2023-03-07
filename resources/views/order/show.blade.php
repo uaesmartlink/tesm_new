@@ -123,7 +123,7 @@
                 border-radius:25px;
                 text-decoration: none;
                 display: inline-block;
-                font-size: 16px;
+                font-size: 12px;
                 margin: 4px 2px;
                 transition-duration: 0.4s;
                 cursor: pointer;
@@ -168,6 +168,12 @@
     </head>
     <body>
         @if (isset($message))
+        if (isset($message)) {
+
+            @endphp
+                <span style="color:green; font-size: 12px; margin:auto;  position: absolute; left: 40%;">{{ $message }}</span>
+            @php
+        }
         <table class="styled-table">
             <tr >
               <table class="inner-table">
@@ -542,7 +548,7 @@
     11- The rights related to this design are reserved, and it cannot be copied or photographed or trade it<br>
     <br>
     <button class="button button1">Agree</button>
-    </div>
+</div>
 
 
     <div id="arabic" class="tabcontent" dir="rtl">
@@ -574,31 +580,7 @@
       evt.currentTarget.className += " active";
     }
     </script>
-
-
       @endif
-        <div>
-
-            @php
-                if (isset($message)) {
-
-                    @endphp
-                        <span style="color:green; font-size: 12px; margin:auto;  position: absolute; left: 42%;">{{ $message }}</span>
-                    @php
-                }else {
-                    @endphp
-                    <span style="font-size: 12px; margin:auto;  position: absolute; left: 38%;">
-                        بالنقر على الزر أدناه فإنك توافق على الشروط ةالأحكام ويتم بدء العمل بالطلب الخاص بك
-                    </span>
-                    <br>
-                    <br>
-                    <form action="{{ route('orders.confirm', [$order,$order->hash]) }}" method="GET">
-                        <button type="submit" class="button-3" style="display: block;">موافق</button>
-                    </form>
-                    @php
-                }
-            @endphp
-        </div>
     </body>
 </html>
 
