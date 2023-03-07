@@ -1,5 +1,5 @@
 <template>
-  <div v-if="order && order.id" class="w-full ltr:text-left rtl:text-right" style="padding-bottom: 20%;">
+  <div v-if="order && order.id" class="w-full ltr:text-left rtl:text-right">
     <div
       v-if="modal"
       class="np flex justify-between items-center px-6 py-4 mb-4 bg-gray-100 border-b rounded-t"
