@@ -1,6 +1,6 @@
 <template>
   <nav class="md:hidden bottom-0 w-full h-12 bg-gray-800 text-xs">
-    <ul class="flex justify-around items-center text-white text-center opacity-75 text-lg font-bold">
+    <ul class="flex justify-around items-center text-white text-center opacity-75 text-lg font-bold mt-80">
       <template v-for="(m, i) in menus" :key="'mm_' + i">
         <li class="relative p-3" :class="isUrl(m.link) ? 'w-12 mt-2' : ''">
           <Link
@@ -32,8 +32,8 @@ export default {
       selected: 0,
       menus: [
         { title: this.$tc('Customer', 2), link: 'customers', icon: 'customer' },
-        { title: this.$tc('Order', 2), link: 'orders', icon: 'store-front' },
         { title: this.$tc('Measurement', 2), link: 'measurements', icon: 'measurement' },
+        { title: this.$tc('Order', 2), link: 'orders', icon: 'store-front' },
         { title: this.$tc('Expense', 2), link: 'expenses', icon: 'expense' },
         { title: this.$tc('Page', 2), link: 'pages', icon: 'bars' },
         // { title: 'Settings', link: 'settings', icon: 'settings' },
