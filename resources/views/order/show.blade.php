@@ -23,7 +23,7 @@
             overflow: hidden;
             border: 1px solid #ccc;
             background-color: #f1f1f1;
-            height: 2vh;
+            height: 10%;
             }
 
             /* Style the buttons inside the tab */
