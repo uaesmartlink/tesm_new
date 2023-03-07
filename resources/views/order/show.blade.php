@@ -524,7 +524,7 @@
         </table> --}}
 
         <div class="tab">
-            <button class="tablinks" onclick="openCity(event, 'English')" class="active">English</button>
+            <button class="tablinks active" onclick="openCity(event, 'English')">English</button>
             <button class="tablinks" onclick="openCity(event, 'arabic')">عربي</button>
         </div>
 
