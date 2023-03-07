@@ -61,7 +61,7 @@
       "lang/fr.json"
     ],
     "css": [
-      "assets/app.38e83bf3.css"
+      "assets/app.abf06d44.css"
     ]
   },
   "resources/js/Pages/Accounts/Edit.vue": {
@@ -1118,7 +1118,7 @@
     "isDynamicEntry": true
   },
   "resources/js/app.css": {
-    "file": "assets/app.38e83bf3.css",
+    "file": "assets/app.abf06d44.css",
     "src": "resources/js/app.css"
   }
 }
