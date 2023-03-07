@@ -6,7 +6,7 @@
         <style>
             *{
                 text-decoration: none;
-                font-size: 10px;
+                font-size: 8px;
             }
 
             body {
