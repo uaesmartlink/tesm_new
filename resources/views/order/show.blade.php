@@ -3,10 +3,13 @@
         <title>
             Order
         </title>
+        <meta name="format-detection" content="telephone=no">
+
         <style>
             *{
                 text-decoration: none;
                 font-size: 8px;
+                font-family: tajawal;
             }
 
             body {
@@ -15,7 +18,6 @@
                 padding-right: 2em;
                 padding-top:  2em;
                 padding-bottom: 2em;
-                font-family: tajawal;
             }
 
             /* Style the tab */
