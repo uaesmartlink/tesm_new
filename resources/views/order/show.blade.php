@@ -147,24 +147,24 @@
             }
 
             .button-3:hover {
-             background-color: #2c974b;
+             background-color: black;
             }
 
             .button-3:focus {
-                box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
+                box-shadow: rgba(25, 25, 25, .4) 0 0 0 3px;
                 outline: none;
             }
 
             .button-3:disabled {
                 background-color: #94d3a2;
-                border-color: rgba(27, 31, 35, .1);
+                box-shadow: rgba(25, 25, 25, .4) 0 0 0 3px;
                 color: rgba(255, 255, 255, .8);
                 cursor: default;
             }
 
             .button-3:active {
-                background-color: #298e46;
-                box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+                background-color: #021005;
+                box-shadow: rgba(25, 25, 25, .4) 0 0 0 3px;
             }
         </style>
     </head>
@@ -543,7 +543,7 @@
   11- The rights related to this design are reserved, and it cannot be copied or photographed or trade it<br>
   </div>
 
-  <div id="arabic" class="tabcontent">
+  <div id="arabic" class="tabcontent" dir="rtl">
     1- نحن غير مسؤولين عن اي تغير في التصميم واللون ولا يتم تبديله او ارجاعه<br>
   2- يستغرق تنفيذ الفستان او العباية المدة المتفق عليها ويمكن التأخير في حال حدوث ظروف خارجة عن ارادتنا<br>
   3- دفعة مقدمة 50% لكل فستان او عباية<br>
@@ -556,6 +556,7 @@
   10- لا يتم تغير الطلب او الالغاء بعد اصدار الفاتورة<br>
   11- الحقوق المتعلقة في هذا التصميم محفوظة لا يمكن نسخه او تصويره او المتاجرة به<br>
 
+  </div>
   <script>
   function openCity(evt, cityName) {
     var i, tabcontent, tablinks;
