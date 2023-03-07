@@ -170,7 +170,7 @@
     <body>
         @if (isset($message))
 
-        <span style="color:green; font-size: 12px; margin:auto;  position: absolute; left:40%;">{{ $message }}</span>
+        {{-- <span style="color:green; font-size: 12px; margin:auto;  position: absolute; left:40%;">{{ $message }}</span> --}}
 
         <table class="styled-table">
             <tr >
