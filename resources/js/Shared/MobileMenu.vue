@@ -1,4 +1,5 @@
 <template>
+  <div class="h-7 block bg-red-900 w-full"></div>
   <nav class="bottom-0 w-full h-12 bg-gray-800 text-xs">
     <ul class="flex justify-around items-center text-white text-center opacity-75 text-lg font-bold">
       <template v-for="(m, i) in menus" :key="'mm_' + i">
