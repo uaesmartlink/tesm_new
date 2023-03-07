@@ -29,7 +29,7 @@
             .tab button {
             background-color: inherit;
             position: relative;
-            left: 30%;
+            left: 50%;
             float: left;
             border: none;
             outline: none;
