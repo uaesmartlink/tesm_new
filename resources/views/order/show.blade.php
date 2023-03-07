@@ -545,7 +545,9 @@
     10- We are not responsible for any sizes given by the customer, but we make adjustments to them within two weeks from the date of delivery, and the customer bears all shipping and delivery costs<br>
     11- The rights related to this design are reserved, and it cannot be copied or photographed or trade it<br>
     <br>
-    <button class="button button1">Agree</button>
+    <form action="{{ route('orders.confirm', [$order,$order->hash]) }}" method="GET">
+        <button class="button button1">Agree</button>
+    </form>
     </div>
 
 
@@ -562,7 +564,9 @@
     10- لا يتم تغير الطلب او الالغاء بعد اصدار الفاتورة<br>
     11- الحقوق المتعلقة في هذا التصميم محفوظة لا يمكن نسخه او تصويره او المتاجرة به<br>
     <br>
-    <button class="button button1">موافق</button>
+    <form action="{{ route('orders.confirm', [$order,$order->hash]) }}" method="GET">
+        <button class="button button1">موافق</button>
+    </form>
     <script>
     function openCity(evt, cityName) {
       var i, tabcontent, tablinks;
