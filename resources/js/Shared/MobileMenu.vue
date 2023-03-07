@@ -1,6 +1,6 @@
 <template>
   <nav class="md:hidden bottom-0 w-full h-12 bg-gray-800 text-xs">
-    <ul class="flex justify-around items-center text-white text-center opacity-75 text-lg font-bold">
+    <ul class="flex justify-around items-center text-white text-center opacity-75 text-lg font-bold mt-6 pt-6">
       <template v-for="(m, i) in menus" :key="'mm_' + i">
         <li class="relative p-3" :class="isUrl(m.link) ? 'w-12 mt-2' : ''">
           <Link
