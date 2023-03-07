@@ -115,7 +115,8 @@
             }
 
             .button {
-                background-color: #4CAF50;
+                background-color: black;
+                border: #000 1px solid;
                 border: none;
                 color: white;
                 padding: 10px 50px;
@@ -130,14 +131,14 @@
             }
 
             .button1 {
-                background-color: green;
+                background-color: black;
+                border: #000 1px solid;
                 color: white;
-                border: 2px solid #4CAF50;
             }
 
             .button1:hover {
                 background-color: #fff;
-                color: green;
+                color: black;
             }
 
 
@@ -168,6 +169,9 @@
     </head>
     <body>
         @if (isset($message))
+
+        <span style="color:green; font-size: 12px; margin:auto;  position: absolute; left:40%;">{{ $message }}</span>
+
         <table class="styled-table">
             <tr >
               <table class="inner-table">
@@ -577,28 +581,7 @@
 
 
       @endif
-        <div>
 
-            @php
-                if (isset($message)) {
-
-                    @endphp
-                        <span style="color:green; font-size: 12px; margin:auto;  position: absolute; left: 42%;">{{ $message }}</span>
-                    @php
-                }else {
-                    @endphp
-                    <span style="font-size: 12px; margin:auto;  position: absolute; left: 38%;">
-                        بالنقر على الزر أدناه فإنك توافق على الشروط ةالأحكام ويتم بدء العمل بالطلب الخاص بك
-                    </span>
-                    <br>
-                    <br>
-                    <form action="{{ route('orders.confirm', [$order,$order->hash]) }}" method="GET">
-                        <button type="submit" class="button-3" style="display: block;">موافق</button>
-                    </form>
-                    @php
-                }
-            @endphp
-        </div>
     </body>
 </html>
 
